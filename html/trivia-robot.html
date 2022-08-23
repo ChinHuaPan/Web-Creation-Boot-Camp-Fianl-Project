@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- add Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Acme&family=Fira+Sans&family=Josefin+Sans&family=RocknRoll+One&display=swap"
+    rel="stylesheet"
+  />
+
+  <title>Rock Paper Scissors</title>
+
+  <!-- import css -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/color-schema.css" />
+  <link rel="stylesheet" href="../css/style-trivia.css" />
+  <link rel="stylesheet" href="../css/media-queries.css" />
+
+  <!--to deal with favicon 404 problem-->
+  <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+  <!-- *** navigation start here *** -->
+  <header role="banner" class="banner fixed">
+    <div id="banner-container" class="flexbox">
+      <!-- logo -->
+
+      <a href="../index.html" id="icon-link" class="flexbox fb-row fb-center"
+        ><img
+          src="https://build1snowman.neocities.org/images/ico_logo.svg"
+          id="icon"
+          class="pointer"
+        />
+        <h4 id="logo-text"><b>Rock Paper Scissors</b></h4>
+      </a>
+
+      <!-- top navigation tab -->
+      <nav role="navigation" id="nav-top" class="flexbox">
+        <a href="international.html" class="tab-item">International</a>
+        <div class="subnav"><a href="trivia.html" class="tab-item tab-active">Trivia</a>
+          <div class="flexbox fb-column subnav-tab">
+            <a href="trivia-experiment.html">Experiment</a>
+            <a href="trivia-robot.html">Robot</a>
+            <a href="trivia-strategies.html">Strategies</a>
+          </div>
+        </div>
+        <a href="tournament.html" class="tab-item">Tournament</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- * menu for mobile device *-->
+  <!-- fixed button -->
+  <button
+    id="f-btn"
+    class="fixed nav-position flexbox fb-center f-btn-inactive"
+    onclick="showNav();"
+  >
+    <img
+      src="https://build1snowman.neocities.org/images/ico_menu.svg"
+      id="menu"
+    />
+  </button>
+  <!-- bottom navigation tab -->
+  <nav role="navigation" id="nav-bottom" class="flexbox inactive">
+    <a href="../index.html" class="tab-item">Home</a>
+    <a href="international.html" class="tab-item">International</a>
+
+    <div class="flexbox fb-column">
+        <div id="trivia-tab" class="flexbox fb-row tab-item">
+          <button id="more-btn" class="more-btn-inactive" onclick="showSubtab();">
+            <img id="arrow-img"src="https://build1snowman.neocities.org/images/ico_arrow-right.svg" style="width:15px;"></button>
+          <a href="trivia.html" class="">Trivia</a>
+        </div>
+        <div id="trivia-subtab" class="flexbox fb-column subtab-inactive">
+          <a href="trivia-experiment.html">Experiment</a>
+          <a href="trivia-robot.html">Robot</a>
+          <a href="trivia-strategies.html">Strategies</a>
+        </div>
+      </div>
+
+    <a href="tournament.html" class="tab-item">Tournament</a>
+  </nav>
+
+  <!-- space for fixed navigation -->
+  <div class="space"></div>
+
+  <!-- content start here -->
+  <article class="article-type">
+    <h1 class="topic-title">
+      Robot -
+    </br>Janken (rock-paper-scissors) robot with 100% winning rate (human-machine
+      cooperation system)
+    </h1>
+    <!-- sourse cite -->
+    <p class="cite">Reference - Yamakawa Laboratory, The University of Tokyo</p>
+<div class="flexbox fb-center margin-bottom">
+    </div>
+    <p id="slideSec" class="flexbox fb-center">
+        <img id="slide1" class="slide-img" src="https://build1snowman.neocities.org/images/janken-1.jpeg">
+        <img id="slide2" class="slide-img" src="https://build1snowman.neocities.org/images/janken-2.jpeg">
+        <img id="slide3" class="slide-img" src="https://build1snowman.neocities.org/images/janken-3.jpeg"></p>
+   
+    <p>
+      In this research we develop a janken (rock-paper-scissors) robot with 100%
+      winning rate as one example of human-machine cooperation systems. Human
+      being plays one of rock, paper and scissors at the timing of one, two,
+      three. According to the timing, the robot hand plays one of three kinds so
+      as to beat the human being.
+    </p>
+    <p>
+      Recognition of human hand can be performed at 1ms with a high-speed
+      vision, and the position and the shape of the human hand are recognized.
+      The wrist joint angle of the robot hand is controlled based on the
+      position of the human hand. The vision recognizes one of rock, paper and
+      scissors based on the shape of the human hand. After that, the robot hand
+      plays one of rock, paper and scissors so as to beat the human being in
+      1ms.
+    </p>
+    <img class="article-img" src="https://build1snowman.neocities.org/images/janken_system.png">
+    <p>
+      Zhou Haijun is part of the Institute of Theoretical Physics of the Chinese
+      Academy of Science. Wang Zhijian and Xu Bin of the Experimental Social
+      Science Laboratory at Zhejiang University wrote a paper titled Social
+      Cycling and Conditional Responses in the Rock Paper Scissors Game.
+    </p>
+
+    <p>
+      This technology is one example that show a possibility of cooperation
+      control within a few miliseconds. And this technology can be applied to
+      motion support of human beings and cooperation work between human beings
+      and robots etc. without time delay.
+    </p>
+    <p>
+      Considering from another point of view, locating factories oversea has
+      been advantageous in labor-intensive process that requires human's eyes
+      and hands because it is difficult to make the process automatic or it is
+      not worth the cost. However, by realizing faster process than human's
+      working speed, the productivity can be improved in regards to cost.
+      Currently although the cost-cutting of the robot is difficult, it is
+      possible to change the location condition of the factory fundamentally by
+      increasing the speed of the robot including visual function.
+    </p>
+
+    <!-- sourse cite -->
+    <p class="cite">Reference - Yamakawa Laboratory, The University of Tokyo</p>
+
+    <!-- go back to trivia btn -->
+    <div class="flexbox fb-center margin-bottom">
+        <a href="trivia.html">
+            <button class="flexbox fb-center btn-go-back">
+                <div class="ico-go-back"></div>go back to read more trivia
+            </button></a>
+    </div>
+  </article>
+
+  <!-- *** footer , start here *** -->
+  <footer id="footer" class="flexbox fb-center fb-row">
+    <div class="flexbox fb-center "><img id="footer-logo" src="https://build1snowman.neocities.org/images/ico_logo.svg"
+        alt="PRS icon" />
+    </div>
+    <div class="flexbox fb-column">
+      <h4>Web Developer - Anna Pan</h4>
+      <div id="contact" class="flexbox fb-row">
+        <div class="contact-item">
+          <h4>pan.chi@northeastern.edu</h4>
+        </div>
+        <div class="contact-slash">
+          <h4>/</h4>
+        </div>
+        <div id="ig" class="flexbox fb-row contact-item">
+          <img id="ico_ig" src="https://build1snowman.neocities.org/images/ico_ig.svg" />
+          <a href="https://www.instagram.com/anna_chinhuapan/">anna_chinhuapan</a></div>
+      </div>
+    </div>
+  </footer>
+  <!-- *** -end- footer , start here *** -->
+
+  <script>
+    /*** show menu for mobile ***/
+    let navHeight = 300; //the same with height of nav-bottom
+    function showNav() {
+      let bottomNav = document.getElementById("nav-bottom");
+      let footer = document.getElementById("footer");
+      let menu = document.getElementById("menu");
+      let btn = document.getElementById("f-btn");
+
+      /* classList.contains
+      > reference: https://stackoverflow.com/questions/5898656/check-if-an-element-contains-a-class-in-javascript
+      */
+      if (bottomNav.classList.contains("inactive")) {
+        /* className
+        reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/className
+        */
+        bottomNav.className = "nactive";
+
+        /* style.attribute
+        reference: https://www.w3schools.com/js/js_htmldom_css.asp
+        */
+        footer.style.height = `${navHeight + 100}px`; //let footer grow up with menu
+
+        menu.style.transform = "rotate(90deg)"; //rotate menu icon when it change to close icon
+        menu.style.transition = "transform 0.3s"; //rotate menu icon when it change to close icon
+
+        menu.src = "https://build1snowman.neocities.org/images/ico_close.svg"; //change icon to close icon
+
+        btn.classList.add("f-btn-nactive");
+        btn.classList.remove("f-btn-inactive");
+      } else {
+        bottomNav.className = "inactive";
+        footer.style.height = "100px";
+        menu.src = "https://build1snowman.neocities.org/images/ico_menu.svg"; // change back to menu icon
+        menu.style.transform = "rotate(0deg)"; //rotate back
+        menu.style.transition = "transform 0.3s"; //rotate back
+
+        btn.classList.add("f-btn-inactive");
+        btn.classList.remove("f-btn-nactive");
+      }
+    }
+    /*** -end - show menu for mobile ***/
+
+    /*** show subtab  ***/
+    function showSubtab() {
+      let subtab = document.getElementById("trivia-subtab");
+      let footer = document.getElementById("footer");
+      let bottomNav = document.getElementById("nav-bottom");
+      let triviaTab = document.getElementById("trivia-tab");
+      let arrowImg = document.getElementById("arrow-img");
+      let moreBtn = document.getElementById("more-btn");
+
+      if (subtab.classList.contains("subtab-inactive")) {
+        arrowImg.src="https://build1snowman.neocities.org/images/ico_arrow-down.svg"
+        moreBtn.classList.add("more-btn-active");
+        moreBtn.classList.remove("more-btn-inactive");
+
+        subtab.className = "subtab-active";
+        subtab.style.transition = "display 0.3s"; 
+
+        navHeight = navHeight + 50;
+        footer.style.height = `${navHeight + 100}px`;
+        bottomNav.style.transition = "height 0.3s"; 
+
+        bottomNav.style.height = `${navHeight}px`;
+        // menu.style.transform = "rotate(0deg)"; //rotate back
+        bottomNav.style.transition = "height 0.3s"; 
+
+        triviaTab.classList.add("tab-active");
+      } else {
+        arrowImg.src="https://build1snowman.neocities.org/images/ico_arrow-right.svg"
+        moreBtn.classList.add("more-btn-inactive");
+        moreBtn.classList.remove("more-btn-active");
+        
+        subtab.className = "subtab-inactive";
+        navHeight = navHeight - 50;
+        footer.style.height = `${navHeight + 100}px`;
+        bottomNav.style.height = `${navHeight}px`;
+        triviaTab.classList.remove("tab-active");
+
+        //   subtab.classList.remove("subtab-active");
+        // subtab.classList.add("subtab-inactive");
+      }
+
+    }
+    /*** -end- show subtab  ***/
+
+
+    /*** play slideShow ***/
+    /*reference:
+    > https://dev.to/codingnepal/automatic-image-slideshow-effect-in-html-css-javascript-3g33*/
+    let slideIndex =0;
+
+    function playSlideShow(){
+        setTimeout(playSlideShow, 1500);
+
+
+        let image = document.querySelectorAll(".slide-img");
+
+        for(let i=0; i < image.length ; i++){
+            image[i].style.display = "none";
+        }
+        slideIndex++;
+
+        if(slideIndex > image.length){slideIndex = 1;}
+
+        image[slideIndex -1].style.display = "flex";
+    }
+
+    playSlideShow();
+    /*** -end- play slideShow ***/
+  </script>
+</body>
+
+<!-- 
+  > favicon 404 problem
+  https://stackoverflow.com/questions/31075893/im-getting-favicon-ico-error -->
+
+  <!-- reference:
+photo
+> https://www.extremetech.com/extreme/214512-rock-paper-scissors-robot-wins-100-of-the-time
+> http://www.hfr.iis.u-tokyo.ac.jp/research/Janken/index-e.html -->

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- add Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Fira+Sans&family=Josefin+Sans&family=RocknRoll+One&display=swap"
+        rel="stylesheet" />
+
+    <title>Rock Paper Scissors</title>
+
+    <!-- import css -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/color-schema.css" />
+    <link rel="stylesheet" href="../css/style-trivia.css" />
+    <link rel="stylesheet" href="../css/media-queries.css" />
+
+    <!--to deal with favicon 404 problem-->
+    <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+    <!-- *** navigation start here *** -->
+    <header role="banner" class="banner fixed">
+        <div id="banner-container" class="flexbox">
+            <!-- logo -->
+
+            <a href="../index.html" id="icon-link" class="flexbox fb-row fb-center"><img
+                    src="https://build1snowman.neocities.org/images/ico_logo.svg" id="icon" class="pointer" />
+                <h4 id="logo-text"><b>Rock Paper Scissors</b></h4>
+            </a>
+
+            <!-- top navigation tab -->
+            <nav role="navigation" id="nav-top" class="flexbox">
+                <a href="international.html" class="tab-item">International</a>
+                <div class="subnav"><a href="trivia.html" class="tab-item tab-active">Trivia</a>
+                    <div class="flexbox fb-column subnav-tab">
+                        <a href="trivia-experiment.html">Experiment</a>
+                        <a href="trivia-robot.html">Robot</a>
+                        <a href="trivia-strategies.html">Strategies</a>
+                    </div>
+                </div>
+                <a href="tournament.html" class="tab-item">Tournament</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- * menu for mobile device *-->
+    <!-- fixed button -->
+    <button id="f-btn" class="fixed nav-position flexbox fb-center f-btn-inactive" onclick="showNav();">
+        <img src="https://build1snowman.neocities.org/images/ico_menu.svg" id="menu" />
+    </button>
+    <!-- bottom navigation tab -->
+    <nav role="navigation" id="nav-bottom" class="flexbox inactive">
+        <a href="../index.html" class="tab-item">Home</a>
+        <a href="international.html" class="tab-item">International</a>
+
+        <div class="flexbox fb-column">
+            <div id="trivia-tab" class="flexbox fb-row tab-item">
+                <button id="more-btn" class="more-btn-inactive" onclick="showSubtab();">
+                    <img id="arrow-img" src="https://build1snowman.neocities.org/images/ico_arrow-right.svg"
+                        style="width:15px;"></button>
+                <a href="trivia.html" class="">Trivia</a>
+            </div>
+            <div id="trivia-subtab" class="flexbox fb-column subtab-inactive">
+                <a href="trivia-experiment.html">Experiment</a>
+                <a href="trivia-robot.html">Robot</a>
+                <a href="trivia-strategies.html">Strategies</a>
+            </div>
+        </div>
+
+        <a href="tournament.html" class="tab-item">Tournament</a>
+    </nav>
+
+    <!-- space for fixed navigation -->
+    <div class="space"></div>
+
+    <!-- content start here -->
+    <article class="article-type">
+        <h1 class="topic-title">
+            Experiment -
+            </br>Study reveals a way to improve chances of winning at rock-paper-scissors
+        </h1>
+        <!-- sourse cite -->
+        <p class="cite">Reference - ßPhys.org by Bob Yirka</p>
+
+
+        <p>
+            A trio of researchers at Zhejiang University in China has found a way for
+            players to improve their odds of winning when playing the hand game
+            rock-paper-scissors. In their paper they've uploaded to the preprint
+            server arXiv, the researchers describe a field study they undertook with a
+            large crowd of volunteers and how it revealed the secret.
+        </p>
+        <p class="flexbox fb-center">
+            <img class="article-img" src="https://build1snowman.neocities.org/images/experiment.jpeg">
+        </p>
+        <p class="annotation">
+            The Rock-Paper-Scissors game. </br>(A) Each matrix entry specifies
+            the row action’s payoff. </br>
+            (B) Non-transitive dominance relations (R beats
+            S, P beats R, S beats P) among the three actions.</br>
+            (C) The social state
+            plane for a population of size N = 6. Each filled circle denotes a social
+            state (nR, nP , nS); the star marks the centroid c0; the arrows indicate
+            three social state transitions at game rounds t = 1, 2, 3. Credit:
+            arXiv:1404.5199 [physics.soc-ph]
+        </p>
+        <p>
+            Scientists in many fields have studied game theory for thousands of years,
+            some to gain military or social advantage, others to better understand
+            human psychology. One game stands out, the hand game rock-paper-scissors,
+            likely because of its simplicity, and because it can be used to make group
+            decisions. Plus, it's universal, requiring no language skills or
+            preconceived social notions—therein lies its inherent beauty. Also, it's
+            supposed to be fair, with every player having a 1 in 3 chance of winning
+            any given round. Prior research has suggested that such odds are the case,
+            but now, it appears the experts may have been wrong. In this new effort,
+            the team in China has found that due to human emotion and decision-making
+            strategy, there is a way to better the odds when playing.
+        </p>
+        <p>
+            Zhou Haijun is part of the Institute of Theoretical Physics of the Chinese
+            Academy of Science. Wang Zhijian and Xu Bin of the Experimental Social
+            Science Laboratory at Zhejiang University wrote a paper titled Social
+            Cycling and Conditional Responses in the Rock Paper Scissors Game.
+        </p>
+
+        <p>
+            To find it, the researchers recruited 300 volunteers from the university
+            and divided them up into 60 groups and had them play the game. Winners
+            were given different amounts of money to make sure that all players were
+            trying to win. As the horde played, swapping teams periodically, the
+            researchers filmed the action and afterwards, studied the tape. They found
+            that players had a slight tendency to repeat a wining throw, and, to give
+            up on a throw if they lost using it more than twice in a row. That meant,
+            the researchers report, that in order to improve their chances of winning,
+            all a player had to do was throw down a gesture that would beat the
+            previous winner or throw down a gesture that would beat one of the other
+            two gestures a prior loser had not just used.
+        </p>
+        <p>
+            The researchers note that such predictable play is easy to explain—people
+            naturally continue with a winning strategy and avoid those that don't
+            work. They call it the "win-stay, lose-shift" strategy, which because most
+            of the people playing use it, results in any given player winning a third
+            of the time—but, not if they know about the strategy used by their
+            opponents, and their opponents don't. Because the analysis came after the
+            game playing, the researchers didn't have the opportunity to test their
+            theory that they'd found a winning strategy, but now that the cat's out of
+            the bag, it's likely people all over the world will be testing it for
+            them.
+        </p>
+
+        <!-- sourse cite -->
+        <p class="cite">
+            Reference -Phys.org by Bob Yirka
+        </p>
+
+        <!-- go back to trivia btn -->
+        <div class="flexbox fb-center margin-bottom">
+            <a href="trivia.html">
+                <button class="flexbox fb-center btn-go-back">
+                    <div class="ico-go-back"></div>go back to read more trivia
+                </button></a>
+        </div>
+
+    </article>
+
+  <!-- *** footer , start here *** -->
+  <footer id="footer" class="flexbox fb-row">
+    <div id="logoSec" class="flexbox"><img id="footer-logo" src="https://build1snowman.neocities.org/images/ico_logo.svg"
+        alt="PRS icon" />
+    </div>
+    <div id="contactSec" class="flexbox fb-column">
+      <h4>Web Developer - Anna Pan</h4>
+      <div id="contact" class="flexbox fb-row">
+        <div class="contact-item">
+          <h4>pan.chi@northeastern.edu</h4>
+        </div>
+        <div class="contact-slash">
+          <h4>/</h4>
+        </div>
+        <div id="ig" class="flexbox fb-row contact-item">
+          <img id="ico_ig" src="https://build1snowman.neocities.org/images/ico_ig.svg" />
+          <a href="https://www.instagram.com/anna_chinhuapan/">anna_chinhuapan</a></div>
+      </div>
+    </div>
+  </footer>
+  <!-- *** -end- footer , start here *** -->
+
+    <script>
+        /*** show menu for mobile ***/
+        let navHeight = 300; //the same with height of nav-bottom
+        function showNav() {
+            let bottomNav = document.getElementById("nav-bottom");
+            let footer = document.getElementById("footer");
+            let menu = document.getElementById("menu");
+            let btn = document.getElementById("f-btn");
+
+            /* classList.contains
+            > reference: https://stackoverflow.com/questions/5898656/check-if-an-element-contains-a-class-in-javascript
+            */
+            if (bottomNav.classList.contains("inactive")) {
+                /* className
+                reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/className
+                */
+                bottomNav.className = "nactive";
+
+                /* style.attribute
+                reference: https://www.w3schools.com/js/js_htmldom_css.asp
+                */
+                footer.style.height = `${navHeight + 100}px`; //let footer grow up with menu
+
+                menu.style.transform = "rotate(90deg)"; //rotate menu icon when it change to close icon
+                menu.style.transition = "transform 0.3s"; //rotate menu icon when it change to close icon
+
+                menu.src = "https://build1snowman.neocities.org/images/ico_close.svg"; //change icon to close icon
+
+                btn.classList.add("f-btn-nactive");
+                btn.classList.remove("f-btn-inactive");
+            } else {
+                bottomNav.className = "inactive";
+                footer.style.height = "100px";
+                menu.src = "https://build1snowman.neocities.org/images/ico_menu.svg"; // change back to menu icon
+                menu.style.transform = "rotate(0deg)"; //rotate back
+                menu.style.transition = "transform 0.3s"; //rotate back
+
+                btn.classList.add("f-btn-inactive");
+                btn.classList.remove("f-btn-nactive");
+            }
+        }
+        /*** -end - show menu for mobile ***/
+
+        /*** show subtab  ***/
+        function showSubtab() {
+            let subtab = document.getElementById("trivia-subtab");
+            let footer = document.getElementById("footer");
+            let bottomNav = document.getElementById("nav-bottom");
+            let triviaTab = document.getElementById("trivia-tab");
+            let arrowImg = document.getElementById("arrow-img");
+            let moreBtn = document.getElementById("more-btn");
+
+            if (subtab.classList.contains("subtab-inactive")) {
+                arrowImg.src = "https://build1snowman.neocities.org/images/ico_arrow-down.svg"
+                moreBtn.classList.add("more-btn-active");
+                moreBtn.classList.remove("more-btn-inactive");
+
+                subtab.className = "subtab-active";
+                subtab.style.transition = "display 0.3s";
+
+                navHeight = navHeight + 50;
+                footer.style.height = `${navHeight + 100}px`;
+                bottomNav.style.transition = "height 0.3s";
+
+                bottomNav.style.height = `${navHeight}px`;
+                // menu.style.transform = "rotate(0deg)"; //rotate back
+                bottomNav.style.transition = "height 0.3s";
+
+                triviaTab.classList.add("tab-active");
+            } else {
+                arrowImg.src = "https://build1snowman.neocities.org/images/ico_arrow-right.svg"
+                moreBtn.classList.add("more-btn-inactive");
+                moreBtn.classList.remove("more-btn-active");
+
+                subtab.className = "subtab-inactive";
+                navHeight = navHeight - 50;
+                footer.style.height = `${navHeight + 100}px`;
+                bottomNav.style.height = `${navHeight}px`;
+                triviaTab.classList.remove("tab-active");
+
+                //   subtab.classList.remove("subtab-active");
+                // subtab.classList.add("subtab-inactive");
+            }
+
+        }
+        /*** -end- show subtab  ***/
+    </script>
+</body>
+
+<!-- 
+  > favicon 404 problem
+  https://stackoverflow.com/questions/31075893/im-getting-favicon-ico-error -->

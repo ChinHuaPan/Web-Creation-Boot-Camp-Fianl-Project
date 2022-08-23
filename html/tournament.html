@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- add Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+    rel="stylesheet"
+  />
+
+  <title>Rock Paper Scissors</title>
+
+  <!-- import css -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/color-schema.css" />
+  <link rel="stylesheet" href="../css/style-tournament.css" />
+  <link rel="stylesheet" href="../css/media-queries.css" />
+
+  <!--to deal with favicon 404 problem-->
+  <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+  <!-- *** navigation start here *** -->
+  <header role="banner" class="banner fixed">
+    <div id="banner-container" class="flexbox">
+      <!-- logo -->
+
+      <a href="../index.html" id="icon-link" class="flexbox fb-row fb-center"
+        ><img
+          src="https://build1snowman.neocities.org/images/ico_logo.svg"
+          id="icon"
+          class="pointer"
+        />
+        <h4 id="logo-text"><b>Rock Paper Scissors</b></h4>
+      </a>
+
+      <!-- top navigation tab -->
+      <nav role="navigation" id="nav-top" class="flexbox">
+        <a href="international.html" class="tab-item">International</a>
+        <div class="subnav">
+          <a href="trivia.html" class="tab-item">Trivia</a>
+          <div class="flexbox fb-column subnav-tab">
+            <a href="trivia-experiment.html">Experiment</a>
+            <a href="trivia-robot.html">Robot</a>
+            <a href="trivia-strategies.html">Strategies</a>
+          </div>
+        </div>
+        <a href="tournament.html" class="tab-item tab-active">Tournament</a>
+      </nav>
+    </div>
+  </header>
+  <!-- * menu for mobile device *-->
+  <!-- fixed button -->
+  <button
+    id="f-btn"
+    class="fixed nav-position flexbox fb-center f-btn-inactive"
+    onclick="showNav();"
+  >
+    <img
+      src="https://build1snowman.neocities.org/images/ico_menu.svg"
+      id="menu"
+    />
+  </button>
+  <!-- bottom navigation tab -->
+  <nav role="navigation" id="nav-bottom" class="flexbox inactive">
+    <a href="../index.html" class="tab-item">Home</a>
+    <a href="international.html" class="tab-item">International</a>
+
+    <div class="flexbox fb-column">
+      <div id="trivia-tab" class="flexbox fb-row tab-item">
+        <button id="more-btn" class="more-btn-inactive" onclick="showSubtab();">
+          <img
+            id="arrow-img"
+            src="https://build1snowman.neocities.org/images/ico_arrow-right.svg"
+            style="width: 15px"
+          />
+        </button>
+        <a href="trivia.html" class="">Trivia</a>
+      </div>
+      <div id="trivia-subtab" class="flexbox fb-column subtab-inactive">
+        <a href="trivia-experiment.html">Experiment</a>
+        <a href="trivia-robot.html">Robot</a>
+        <a href="trivia-strategies.html">Strategies</a>
+      </div>
+    </div>
+
+    <a href="tournament.html" class="tab-item">Tournament</a>
+  </nav>
+
+  <!-- space for fixed navigation -->
+  <div class="space"></div>
+
+  <!-- *** banner , start here *** -->
+  <div id="banner-tournament" class="flexbox banner-page margin-bottom">
+    <h1 class="banner-title">Tournament</h1>
+  </div>
+
+  <!-- *** introduce , start here *** -->
+  <article class="article-type">
+    <h3 class="video-title">USARPS Championship Match</h3>
+    <div class="flexbox fb-center margin-bottom">
+      <iframe
+        id="tournament-video"
+        class="video"
+        src="https://www.youtube.com/embed/6yrdT5y12kA"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div id="list" class="flexbox fb-center margin-bottom fb-column">
+      <caption>
+        The World Rock Paper Scissors Association Championship
+      </caption>
+      <table id="tournament-table">
+        <col width="25%" />
+        <col width="25%" />
+        <col width="25%" />
+        <col width="25%" />
+        <!-- title start here -->
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Champion</th>
+            <th>Gender</th>
+            <th>Nationality</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>2009</td>
+            <td>Tim Conrad</td>
+            <td>Male</td>
+            <td>United State</td>
+          </tr>
+
+          <tr>
+            <td>2008</td>
+            <td>Monica Martinez</td>
+            <td>Female</td>
+            <td>Canada</td>
+          </tr>
+
+          <tr>
+            <td>2007</td>
+            <td>Andrea Farina</td>
+            <td>Female</td>
+            <td>United State</td>
+          </tr>
+
+          <tr>
+            <td>2006</td>
+            <td>Bob Cooper</td>
+            <td>Male</td>
+            <td>United Kingdom</td>
+          </tr>
+
+          <tr>
+            <td>2005</td>
+            <td>Andrew Bergel</td>
+            <td>Male</td>
+            <td>Canada</td>
+          </tr>
+
+          <tr>
+            <td>2004</td>
+            <td>Lee Rammage</td>
+            <td>Male</td>
+            <td>Canada</td>
+          </tr>
+
+          <tr>
+            <td>2003</td>
+            <td>Rob Krueger</td>
+            <td>Male</td>
+            <td>Canada</td>
+          </tr>
+
+          <tr>
+            <td>2002</td>
+            <td>Pete Lovering</td>
+            <td>Male</td>
+            <td>Canada</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="cite">Reference - Wiki > Rock paper scissors > Tournament</p>
+    </div>
+  </article>
+
+  <!-- *** footer , start here *** -->
+  <footer id="footer" class="flexbox fb-row">
+    <div id="logoSec" class="flexbox">
+      <img
+        id="footer-logo"
+        src="https://build1snowman.neocities.org/images/ico_logo.svg"
+        alt="PRS icon"
+      />
+    </div>
+    <div id="contactSec" class="flexbox fb-column">
+      <h4>Web Developer - Anna Pan</h4>
+      <div id="contact" class="flexbox fb-row">
+        <div class="contact-item">
+          <h4>pan.chi@northeastern.edu</h4>
+        </div>
+        <div class="contact-slash">
+          <h4>/</h4>
+        </div>
+        <div id="ig" class="flexbox fb-row contact-item">
+          <img
+            id="ico_ig"
+            src="https://build1snowman.neocities.org/images/ico_ig.svg"
+          />
+          <a href="https://www.instagram.com/anna_chinhuapan/"
+            >anna_chinhuapan</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- *** -end- footer , start here *** -->
+
+  <script>
+    /*** show menu for mobile ***/
+    let navHeight = 300; //the same with height of nav-bottom
+    function showNav() {
+      let bottomNav = document.getElementById("nav-bottom");
+      let footer = document.getElementById("footer");
+      let menu = document.getElementById("menu");
+      let btn = document.getElementById("f-btn");
+
+      /* classList.contains
+      > reference: https://stackoverflow.com/questions/5898656/check-if-an-element-contains-a-class-in-javascript
+      */
+      if (bottomNav.classList.contains("inactive")) {
+        /* className
+        reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/className
+        */
+        bottomNav.className = "nactive";
+
+        /* style.attribute
+        reference: https://www.w3schools.com/js/js_htmldom_css.asp
+        */
+        footer.style.height = `${navHeight + 100}px`; //let footer grow up with menu
+
+        menu.style.transform = "rotate(90deg)"; //rotate menu icon when it change to close icon
+        menu.style.transition = "transform 0.3s"; //rotate menu icon when it change to close icon
+
+        menu.src = "https://build1snowman.neocities.org/images/ico_close.svg"; //change icon to close icon
+
+        btn.classList.add("f-btn-nactive");
+        btn.classList.remove("f-btn-inactive");
+      } else {
+        bottomNav.className = "inactive";
+        footer.style.height = "100px";
+        menu.src = "https://build1snowman.neocities.org/images/ico_menu.svg"; // change back to menu icon
+        menu.style.transform = "rotate(0deg)"; //rotate back
+        menu.style.transition = "transform 0.3s"; //rotate back
+
+        btn.classList.add("f-btn-inactive");
+        btn.classList.remove("f-btn-nactive");
+      }
+    }
+    /*** -end - show menu for mobile ***/
+
+    /*** show subtab  ***/
+    function showSubtab() {
+      let subtab = document.getElementById("trivia-subtab");
+      let footer = document.getElementById("footer");
+      let bottomNav = document.getElementById("nav-bottom");
+      let triviaTab = document.getElementById("trivia-tab");
+      let arrowImg = document.getElementById("arrow-img");
+      let moreBtn = document.getElementById("more-btn");
+
+      if (subtab.classList.contains("subtab-inactive")) {
+        arrowImg.src =
+          "https://build1snowman.neocities.org/images/ico_arrow-down.svg";
+        moreBtn.classList.add("more-btn-active");
+        moreBtn.classList.remove("more-btn-inactive");
+
+        subtab.className = "subtab-active";
+        subtab.style.transition = "display 0.3s";
+
+        navHeight = navHeight + 50;
+        footer.style.height = `${navHeight + 100}px`;
+        bottomNav.style.transition = "height 0.3s";
+
+        bottomNav.style.height = `${navHeight}px`;
+        // menu.style.transform = "rotate(0deg)"; //rotate back
+        bottomNav.style.transition = "height 0.3s";
+
+        triviaTab.classList.add("tab-active");
+      } else {
+        arrowImg.src =
+          "https://build1snowman.neocities.org/images/ico_arrow-right.svg";
+        moreBtn.classList.add("more-btn-inactive");
+        moreBtn.classList.remove("more-btn-active");
+
+        subtab.className = "subtab-inactive";
+        navHeight = navHeight - 50;
+        footer.style.height = `${navHeight + 100}px`;
+        bottomNav.style.height = `${navHeight}px`;
+        triviaTab.classList.remove("tab-active");
+
+        //   subtab.classList.remove("subtab-active");
+        // subtab.classList.add("subtab-inactive");
+      }
+    }
+    /*** -end- show subtab  ***/
+  </script>
+</body>
+
+<!-- 
+  > favicon 404 problem
+  https://stackoverflow.com/questions/31075893/im-getting-favicon-ico-error -->

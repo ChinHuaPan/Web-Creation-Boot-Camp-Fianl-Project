@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- add Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans&family=RocknRoll+One&display=swap"
+    rel="stylesheet">
+
+  <title>Rock Paper Scissors</title>
+
+  <!-- import css -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/color-schema.css" />
+  <link rel="stylesheet" href="../css/style-internationl.css" />
+  <link rel="stylesheet" href="../css/media-queries.css" />
+
+  <!--to deal with favicon 404 problem-->
+  <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+  <!-- *** navigation start here *** -->
+  <header role="banner" class="banner fixed">
+    <div id="banner-container" class="flexbox">
+      <!-- logo -->
+
+      <a href="../index.html" id="icon-link" class="flexbox fb-row fb-center"><img
+          src="https://build1snowman.neocities.org/images/ico_logo.svg" id="icon" class="pointer" />
+        <h4 id="logo-text"><b>Rock Paper Scissors</b></h4>
+      </a>
+
+      <!-- top navigation tab -->
+      <nav role="navigation" id="nav-top" class="flexbox">
+        <a href="international.html" class="tab-item tab-active">International</a>
+        <div class="subnav"><a href="trivia.html" class="tab-item">Trivia</a>
+          <div class="flexbox fb-column subnav-tab">
+            <a href="trivia-experiment.html">Experiment</a>
+            <a href="trivia-robot.html">Robot</a>
+            <a href="trivia-strategies.html">Strategies</a>
+          </div>
+        </div>
+        <a href="tournament.html" class="tab-item">Tournament</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- * menu for mobile device *-->
+  <!-- fixed button -->
+  <button id="f-btn" class="fixed nav-position flexbox fb-center f-btn-inactive" onclick="showNav();">
+    <img src="https://build1snowman.neocities.org/images/ico_menu.svg" id="menu" />
+  </button>
+  <!-- bottom navigation tab -->
+  <nav role="navigation" id="nav-bottom" class="flexbox inactive">
+    <a href="../index.html" class="tab-item">Home</a>
+    <a href="international.html" class="tab-item">International</a>
+
+    <div class="flexbox fb-column">
+      <div id="trivia-tab" class="flexbox fb-row tab-item">
+        <button id="more-btn" class="more-btn-inactive" onclick="showSubtab();">
+          <img id="arrow-img" src="https://build1snowman.neocities.org/images/ico_arrow-right.svg"
+            style="width:15px;"></button>
+        <a href="trivia.html" class="">Trivia</a>
+      </div>
+      <div id="trivia-subtab" class="flexbox fb-column subtab-inactive">
+        <a href="trivia-experiment.html">Experiment</a>
+        <a href="trivia-robot.html">Robot</a>
+        <a href="trivia-strategies.html">Strategies</a>
+      </div>
+    </div>
+
+    <a href="tournament.html" class="tab-item">Tournament</a>
+
+  </nav>
+
+  <!-- space for fixed navigation -->
+  <div class="space"></div>
+
+
+  <!-- *** banner , start here *** -->
+  <div id="banner-international" class="flexbox banner-page margin-bottom">
+    <h1 class="banner-title">International</h1>
+  </div>
+
+  <!-- *** introduce , start here *** -->
+
+  <article class="table-type">
+
+
+    <div id="country-selector" class="flexbox fb-center fb-row margin-bottom">
+
+      <div class="flexbox fb-row fb-center line">
+        <input type="radio" id="us" name="country" value="us" onclick="scrollToCountry()">
+        <label for="us" class="country-btn flexbox fb-center">United State 🇺🇸</label>
+
+        <input type="radio" id="india" name="country" value="india" onclick="scrollToCountry()">
+        <label for="india" class="country-btn flexbox fb-center">India 🇮🇳</label>
+
+        <input type="radio" id="vietnam" name="country" value="vietnam" onclick="scrollToCountry()">
+        <label for="vietnam" class="country-btn flexbox fb-center">Vietnam 🇻🇳</label>
+
+        
+      </div>
+
+
+      <div class="flexbox fb-row fb-center line">
+
+        <input type="radio" id="taiwan" name="country" value="taiwan" onclick="scrollToCountry()">
+        <label for="taiwan" class="country-btn flexbox fb-center">Taiwan 🇹🇼</label>
+
+        <input type="radio" id="china" name="country" value="china" onclick="scrollToCountry()">
+        <label for="china" class="country-btn flexbox fb-center">China 🇨🇳</label>
+
+        <input type="radio" id="japan" name="country" value="japan" onclick="scrollToCountry()">
+        <label for="japan" class="country-btn flexbox fb-center">Japan 🇯🇵</label>
+
+
+        <input type="radio" id="korea" name="country" value="korea" onclick="scrollToCountry()">
+        <label for="korea" class="country-btn flexbox fb-center">Korea 🇰🇷</label>
+      </div>
+    </div>
+
+
+
+    <!-- us -->
+    <div id="us-section" class="block flexbox fb-column">
+      <div class="block-title">United State</div>
+
+
+      <div class="flexbox fb-row fb-center mobile-change">
+        <div class="gesture-and-result flexbox fb-center fb-column sub-block">
+
+          <div class="sub-title"><span>Language</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="language-text">English</p>
+          </div>
+
+
+          <div class="sub-title"><span>Gesture</span></div>
+
+          <div class="gestures sub-block flexbox fb-row fb-center">
+            <div class="rock flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_rock.svg">
+              <div class="gesture-text">Rock</div>
+            </div>
+            <div class="paper flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_paper.svg">
+              <div class="gesture-text">Paper</div>
+            </div>
+            <div class="scissors flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_scissors.svg">
+              <div class="gesture-text">Scissors</div>
+            </div>
+          </div>
+
+          <div class="sub-title"><span>Result</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="win win-text result-text">WIN 🥳</p>
+            <p class="lose lose-text result-text">LOSE 🥲</p>
+            <p class="draw draw-text result-text">DRAW</p>
+          </div>
+        </div>
+
+        <div class="how-to-play sub-block flexbox fb-column fb-center">
+          <div class="sub-title "><span>How to Play</span></div>
+          <div class="step1 flexbox fb-row fb-center">
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="left-hand">
+            <div class="sentence">Rock,</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step2 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">Paper,</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step3 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">Scissors,</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step4 flexbox fb-row fb-center"><img
+              src="https://build1snowman.neocities.org/images/img_paper.svg" class="left-hand">
+            <div class="sentence">Shoot!</br>
+              <div class="hint-text">(Show your gesture)</div>
+            </div>
+            <img src="https://build1snowman.neocities.org/images/img_scissors.svg" class="right-hand">
+          </div>
+        </div>
+
+
+
+        <div class="know-more"></div>
+      </div>
+    </div>
+
+    <!-- india -->
+    <div id="us-section" class="block flexbox fb-column">
+      <div class="block-title">India</div>
+
+
+      <div class="flexbox fb-row fb-center mobile-change">
+        <div class="gesture-and-result flexbox fb-center fb-column sub-block">
+
+          <div class="sub-title"><span>Language</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="language-text">English</p>
+          </div>
+
+
+          <div class="sub-title"><span>Gesture</span></div>
+
+          <div class="gestures sub-block flexbox fb-row fb-center">
+            <div class="rock flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_rock.svg">
+              <div class="gesture-text">Stone</div>
+            </div>
+            <div class="paper flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_paper.svg">
+              <div class="gesture-text">Paper</div>
+            </div>
+            <div class="scissors flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_scissors.svg">
+              <div class="gesture-text">Scissors</div>
+            </div>
+          </div>
+
+          <div class="sub-title"><span>Result</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="win win-text result-text">WIN 🥳</p>
+            <p class="lose lose-text result-text">LOSE 🥲</p>
+            <p class="draw draw-text result-text">DRAW</p>
+          </div>
+        </div>
+
+        <div class="how-to-play sub-block flexbox fb-column fb-center">
+          <div class="sub-title "><span>How to Play</span></div>
+          <div class="step1 flexbox fb-row fb-center">
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="left-hand">
+            <div class="sentence">Stone,</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step2 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">Paper,</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step3 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">Scissors!</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step4 flexbox fb-row fb-center"><img
+              src="https://build1snowman.neocities.org/images/img_paper.svg" class="left-hand">
+            <div class="sentence">
+              <div class="hint-text">(Show your gesture)</div>
+            </div>
+            <img src="https://build1snowman.neocities.org/images/img_scissors.svg" class="right-hand">
+          </div>
+        </div>
+
+
+
+        <div class="know-more"></div>
+      </div>
+    </div>
+
+    <!-- vietnam -->
+    <div id="us-section" class="block flexbox fb-column">
+      <div class="block-title">Vietnam</div>
+
+
+      <div class="flexbox fb-row fb-center mobile-change">
+        <div class="gesture-and-result flexbox fb-center fb-column sub-block">
+
+          <div class="sub-title"><span>Language</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="language-text">Vietnamese </p>
+          </div>
+
+
+          <div class="sub-title"><span>Gesture</span></div>
+
+          <div class="gestures sub-block flexbox fb-row fb-center">
+
+            <div class="scissors flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_scissors.svg">
+              <div class="gesture-text">kéo</div>
+            </div>
+
+            <div class="rock flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_rock.svg">
+              <div class="gesture-text">búa</div>
+            </div>
+
+            <div class="paper flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_paper.svg">
+              <div class="gesture-text">bao</div>
+            </div>
+
+
+          </div>
+
+          <div class="sub-title"><span>Result</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="win win-text result-text">WIN 🥳</p>
+            <p class="lose lose-text result-text">LOSE 🥲</p>
+            <p class="draw draw-text result-text">DRAW</p>
+          </div>
+        </div>
+
+        <div class="how-to-play sub-block flexbox fb-column fb-center">
+          <div class="sub-title "><span>How to Play</span></div>
+          <div class="step1 flexbox fb-row fb-center">
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="left-hand">
+            <div class="sentence">Kéo,</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step2 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">Búa,</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step3 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">Bao!</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step4 flexbox fb-row fb-center"><img
+              src="https://build1snowman.neocities.org/images/img_paper.svg" class="left-hand">
+            <div class="sentence">
+              <div class="hint-text">(Show your gesture)</div>
+            </div>
+            <img src="https://build1snowman.neocities.org/images/img_scissors.svg" class="right-hand">
+          </div>
+        </div>
+
+      </div>
+      <div class="know-more flexbox fb-center fb-column">
+          <div class="sub-title "><span>Know More</span></div>
+          <div class="more-hint">
+          <p class="hint-text">In fact, people have another way much more popular to play:</br>
+            
+            "oản tù tì"," (mean: one two three)</br>
+            "ra cái gì?"(mean: What are you going to do? )</br>
+            ra cái <b>này</b>!" (show what your gesture) </p></div>
+        </div>
+    </div>
+
+
+    <!-- taiwan -->
+    <div id="us-section" class="block flexbox fb-column">
+      <div class="block-title">Taiwan</div>
+
+
+      <div class="flexbox fb-row fb-center mobile-change">
+        <div class="gesture-and-result flexbox fb-center fb-column sub-block">
+
+          <div class="sub-title"><span>Language</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="language-text">Mandarin </p>
+          </div>
+
+
+          <div class="sub-title"><span>Gesture</span></div>
+
+          <div class="gestures sub-block flexbox fb-row fb-center">
+
+            <div class="scissors flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_scissors.svg">
+              <div class="gesture-text">剪刀<br>jian dao</div>
+            </div>
+
+            <div class="rock flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_rock.svg">
+              <div class="gesture-text">石頭<br>shi tou</div>
+            </div>
+
+            <div class="paper flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_paper.svg">
+              <div class="gesture-text">布<br>bu</div>
+            </div>
+
+
+          </div>
+
+          <div class="sub-title"><span>Result</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="win win-text result-text">贏了 🥳<br>ying le</p>
+            <p class="lose lose-text result-text">輸了 🥲<br>shu le</p>
+            <p class="draw draw-text result-text">平手<br>píng shou</p>
+          </div>
+        </div>
+
+        <div class="how-to-play sub-block flexbox fb-column fb-center">
+          <div class="sub-title "><span>How to Play</span></div>
+          <div class="step1 flexbox fb-row fb-center">
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="left-hand">
+            <div class="sentence">剪刀<br>jian dao</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step2 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">石頭<br>shi tou</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+
+          <div class="step３ flexbox fb-row fb-center"><img
+              src="https://build1snowman.neocities.org/images/img_paper.svg" class="left-hand">
+            <div class="sentence">布！<br>bu!
+              <div class="hint-text">(Show your gesture)</div>
+            </div>
+            <img src="https://build1snowman.neocities.org/images/img_scissors.svg" class="right-hand">
+          </div>
+        </div>
+
+      </div>
+      <div class="know-more flexbox fb-center fb-column">
+          <div class="sub-title "><span>Know More</span></div>
+          <div class="more-hint">
+          <p class="hint-text">People usually play this game to determine somthing not really important. </br>Especially to determine someone
+            to do the thing which nobody wants to do.</br>
+            Finally the loser has to do. </p></div>
+        </div>
+    </div>
+
+    <!-- china -->
+    <div id="us-section" class="block flexbox fb-column">
+      <div class="block-title">China</div>
+
+
+      <div class="flexbox fb-row fb-center mobile-change">
+        <div class="gesture-and-result flexbox fb-center fb-column sub-block">
+
+          <div class="sub-title"><span>Language</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="language-text">Mandarin </p>
+          </div>
+
+
+          <div class="sub-title"><span>Gesture</span></div>
+
+          <div class="gestures sub-block flexbox fb-row fb-center">
+
+            <div class="scissors flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_scissors.svg">
+              <div class="gesture-text">剪刀<br>jian dao</div>
+            </div>
+
+            <div class="rock flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_rock.svg">
+              <div class="gesture-text">石頭<br>shi tou</div>
+            </div>
+
+            <div class="paper flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_paper.svg">
+              <div class="gesture-text">布<br>bu</div>
+            </div>
+
+
+          </div>
+
+          <div class="sub-title"><span>Result</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="win win-text result-text">贏了 🥳<br>ying le</p>
+            <p class="lose lose-text result-text">輸了 🥲<br>shu le</p>
+            <p class="draw draw-text result-text">平手<br>ping shou</p>
+          </div>
+        </div>
+
+        <div class="how-to-play sub-block flexbox fb-column fb-center">
+          <div class="sub-title "><span>How to Play</span></div>
+          <div class="step1 flexbox fb-row fb-center">
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="left-hand">
+            <div class="sentence">剪刀<br>jian dao</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step2 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">石頭<br>shi tou</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+
+          <div class="step３ flexbox fb-row fb-center"><img
+              src="https://build1snowman.neocities.org/images/img_paper.svg" class="left-hand">
+            <div class="sentence">布！<br> bu!
+              <div class="hint-text">(Show your gesture)</div>
+            </div>
+            <img src="https://build1snowman.neocities.org/images/img_scissors.svg" class="right-hand">
+          </div>
+        </div>
+
+      </div>
+      <div class="know-more flexbox fb-center fb-column">
+          <div class="sub-title "><span>Know More</span></div>
+          <div class="more-hint">
+          <p class="hint-text">People just play this game when the were children.</br>
+          People also have another way to play: </br>They decide to play and say "我們來tse一下!“ (mean: Let's play!)</br>
+          And then just say "tse" and show the gestures.
+        </p></div>
+        </div>
+    </div>
+
+    <!-- japan -->
+    <div id="us-section" class="block flexbox fb-column">
+      <div class="block-title">Japan</div>
+
+
+      <div class="flexbox fb-row fb-center mobile-change">
+        <div class="gesture-and-result flexbox fb-center fb-column sub-block">
+
+          <div class="sub-title"><span>Language</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="language-text">Japanese </p>
+          </div>
+
+
+          <div class="sub-title"><span>Gesture</span></div>
+
+          <div class="gestures sub-block flexbox fb-row fb-center">
+
+            <div class="rock flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_rock.svg">
+              <div class="gesture-text">グー<br>gu</div>
+            </div>
+
+            <div class="paper flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_paper.svg">
+              <div class="gesture-text">パー<br>pa</div>
+            </div>
+
+            <div class="scissors flexbox fb-center fb-column gesture-img "><img
+              src="https://build1snowman.neocities.org/images/img_scissors.svg">
+            <div class="gesture-text">チョキ<br>chyo ki</div>
+          </div>
+
+          </div>
+
+          <div class="sub-title"><span>Result</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="win win-text result-text">勝ち 🥳<br>ka chi</p>
+            <p class="lose lose-text result-text">敗れる 🥲<br>ha re ru</p>
+            <p class="draw draw-text result-text">あいこ<br>a i ko</p>
+          </div>
+        </div>
+
+        <div class="how-to-play sub-block flexbox fb-column fb-center">
+          <div class="sub-title "><span>How to Play</span></div>
+
+          <div class="step0 flexbox fb-row fb-center">
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="left-hand">
+            <div class="sentence">最初はグー<br>sai syo wa gu -<div class="hint-text">(For ready)</div></div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step1 flexbox fb-row fb-center">
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="left-hand">
+            <div class="sentence">じゃん...<br>jan...</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step2 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">けん...<br>ken..</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+
+          <div class="step３ flexbox fb-row fb-center"><img
+              src="https://build1snowman.neocities.org/images/img_paper.svg" class="left-hand">
+            <div class="sentence">ぽん！<br>pon!
+              <div class="hint-text">(Show your gesture)</div>
+            </div>
+            <img src="https://build1snowman.neocities.org/images/img_scissors.svg" class="right-hand">
+          </div>
+        </div>
+
+      </div>
+      <div class="know-more flexbox fb-center fb-column">
+          <div class="sub-title "><span>Know More</span></div>
+          <div class="more-hint">
+          <p class="hint-text">If the result is draw, then they both will say "あいこでしょ"(a i ko de syo) together, and display their
+            hands again on “しょ”(syo). </br>This continues until someone wins the game.
+        </p></div>
+        </div>
+    </div>
+
+    <!-- korea -->
+    <div id="us-section" class="block flexbox fb-column">
+      <div class="block-title">Korea</div>
+
+
+      <div class="flexbox fb-row fb-center mobile-change">
+        <div class="gesture-and-result flexbox fb-center fb-column sub-block">
+
+          <div class="sub-title"><span>Language</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="language-text">Korean </p>
+          </div>
+
+
+          <div class="sub-title"><span>Gesture</span></div>
+
+          <div class="gestures sub-block flexbox fb-row fb-center">
+
+
+            <div class="scissors flexbox fb-center fb-column gesture-img "><img
+              src="https://build1snowman.neocities.org/images/img_scissors.svg">
+            <div class="gesture-text">가위<br>ka wi</div>
+          </div>
+
+
+            <div class="rock flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_rock.svg">
+              <div class="gesture-text">바위<br>pa wi</div>
+            </div>
+
+            <div class="paper flexbox fb-center fb-column gesture-img "><img
+                src="https://build1snowman.neocities.org/images/img_paper.svg">
+              <div class="gesture-text">보<br>bo</div>
+            </div>
+
+            
+          </div>
+
+          <div class="sub-title"><span>Result</span></div>
+
+          <div class="result sub-block flexbox fb-row fb-center">
+            <p class="win win-text result-text">이기다 🥳<br>i ki ta</p>
+            <p class="lose lose-text result-text">잃다 🥲<br>ier ta</p>
+            <p class="draw draw-text result-text"> 비기다<br>pi ki ta</p>
+          </div>
+        </div>
+
+        <div class="how-to-play sub-block flexbox fb-column fb-center">
+          <div class="sub-title "><span>How to Play</span></div>
+
+
+          <div class="step1 flexbox fb-row fb-center">
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="left-hand">
+            <div class="sentence">가위,<br>ka wi</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+          <div class="step2 flexbox fb-row fb-center"><img src="https://build1snowman.neocities.org/images/img_rock.svg"
+              class="left-hand">
+            <div class="sentence">바위,<br>pa wi</div>
+            <img src="https://build1snowman.neocities.org/images/img_rock.svg" class="right-hand">
+          </div>
+
+          <img src="https://build1snowman.neocities.org/images/ico_arrow-down.svg" class="arrow">
+
+
+          <div class="step３ flexbox fb-row fb-center"><img
+              src="https://build1snowman.neocities.org/images/img_paper.svg" class="left-hand">
+            <div class="sentence">보！<br> bo
+              <div class="hint-text">(Show your gesture)</div>
+            </div>
+            <img src="https://build1snowman.neocities.org/images/img_scissors.svg" class="right-hand">
+          </div>
+        </div>
+      </div>
+    
+  </article>
+
+   <!-- *** footer , start here *** -->
+  <footer id="footer" class="flexbox fb-row">
+    <div id="logoSec" class="flexbox"><img id="footer-logo" src="https://build1snowman.neocities.org/images/ico_logo.svg"
+        alt="PRS icon" />
+    </div>
+    <div id="contactSec" class="flexbox fb-column">
+      <h4>Web Developer - Anna Pan</h4>
+      <div id="contact" class="flexbox fb-row">
+        <div class="contact-item">
+          <h4>pan.chi@northeastern.edu</h4>
+        </div>
+        <div class="contact-slash">
+          <h4>/</h4>
+        </div>
+        <div id="ig" class="flexbox fb-row contact-item">
+          <img id="ico_ig" src="https://build1snowman.neocities.org/images/ico_ig.svg" />
+          <a href="https://www.instagram.com/anna_chinhuapan/">anna_chinhuapan</a></div>
+      </div>
+    </div>
+  </footer>
+  <!-- *** -end- footer , start here *** -->
+
+  <script>
+    /*** show menu for mobile ***/
+    let navHeight = 300; //the same with height of nav-bottom
+    function showNav() {
+      let bottomNav = document.getElementById("nav-bottom");
+      let footer = document.getElementById("footer");
+      let menu = document.getElementById("menu");
+      let btn = document.getElementById("f-btn");
+
+      /* classList.contains
+      > reference: https://stackoverflow.com/questions/5898656/check-if-an-element-contains-a-class-in-javascript
+      */
+      if (bottomNav.classList.contains("inactive")) {
+        /* className
+        reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/className
+        */
+        bottomNav.className = "nactive";
+
+        /* style.attribute
+        reference: https://www.w3schools.com/js/js_htmldom_css.asp
+        */
+        footer.style.height = `${navHeight + 100}px`; //let footer grow up with menu
+
+        menu.style.transform = "rotate(90deg)"; //rotate menu icon when it change to close icon
+        menu.style.transition = "transform 0.3s"; //rotate menu icon when it change to close icon
+
+        menu.src = "https://build1snowman.neocities.org/images/ico_close.svg"; //change icon to close icon
+
+        btn.classList.add("f-btn-nactive");
+        btn.classList.remove("f-btn-inactive");
+
+
+      } else {
+        bottomNav.className = "inactive";
+        footer.style.height = "100px";
+        menu.src = "https://build1snowman.neocities.org/images/ico_menu.svg"; // change back to menu icon
+        menu.style.transform = "rotate(0deg)"; //rotate back
+        menu.style.transition = "transform 0.3s"; //rotate back
+
+        btn.classList.add("f-btn-inactive");
+        btn.classList.remove("f-btn-nactive");
+
+      }
+    }
+    /*** -end - show menu for mobile ***/
+
+    /*** show subtab  ***/
+    function showSubtab() {
+      let subtab = document.getElementById("trivia-subtab");
+      let footer = document.getElementById("footer");
+      let bottomNav = document.getElementById("nav-bottom");
+      let triviaTab = document.getElementById("trivia-tab");
+      let arrowImg = document.getElementById("arrow-img");
+      let moreBtn = document.getElementById("more-btn");
+
+      if (subtab.classList.contains("subtab-inactive")) {
+        arrowImg.src = "https://build1snowman.neocities.org/images/ico_arrow-down.svg"
+        moreBtn.classList.add("more-btn-active");
+        moreBtn.classList.remove("more-btn-inactive");
+
+        subtab.className = "subtab-active";
+        subtab.style.transition = "display 0.3s";
+
+        navHeight = navHeight + 50;
+        footer.style.height = `${navHeight + 100}px`;
+        bottomNav.style.transition = "height 0.3s";
+
+        bottomNav.style.height = `${navHeight}px`;
+        bottomNav.style.transition = "height 0.3s";
+
+        triviaTab.classList.add("tab-active");
+      } else {
+        arrowImg.src = "https://build1snowman.neocities.org/images/ico_arrow-right.svg"
+        moreBtn.classList.add("more-btn-inactive");
+        moreBtn.classList.remove("more-btn-active");
+
+        subtab.className = "subtab-inactive";
+        navHeight = navHeight - 50;
+        footer.style.height = `${navHeight + 100}px`;
+        bottomNav.style.height = `${navHeight}px`;
+        triviaTab.classList.remove("tab-active");
+      }
+
+    }
+    /*** -end- show subtab  ***/
+
+
+    function scrollToCountry() {
+      let checked = document.querySelector("input[name=country]:checked").value;
+      /* get device screen 
+      > https://developer.mozilla.org/en-US/docs/Web/API/Screen/width*/
+      let lWidth = Number(window.screen.width);
+      console.log(checked + lWidth);
+
+      /* mobile device */
+      if(lWidth <768){
+
+        if (checked == "us") {
+        window.scrollTo({
+          top: 370
+        });
+      }
+
+      if (checked == "india") {
+        window.scrollTo({
+          top: 1450
+        });
+      }
+
+      if (checked == "vietnam") {
+        window.scrollTo({
+          top: 2540
+        });
+      }
+
+      if (checked == "taiwan") {
+        window.scrollTo({
+          top: 3830
+        });}
+
+        if (checked == "china") {
+        window.scrollTo({
+          top: 5050
+        });}
+
+        if (checked == "japan") {
+        window.scrollTo({
+          top: 6300
+        });}
+
+        if (checked == "korea") {
+        window.scrollTo({
+          top: 7600
+        });}
+
+      }else{
+      /* other device besides mobile */
+
+        if (checked == "us") {
+        window.scrollTo({
+          top: 400
+        });
+      }
+
+      if (checked == "india") {
+        window.scrollTo({
+          top: 1040
+        });
+      }
+
+      if (checked == "vietnam") {
+        window.scrollTo({
+          top: 1690
+        });
+      }
+
+      if (checked == "taiwan") {
+        window.scrollTo({
+          top: 2480
+        });
+      }
+
+      if (checked == "china") {
+        window.scrollTo({
+          top: 3280
+        });
+      }
+
+      if (checked == "japan") {
+        window.scrollTo({
+          top: 4100
+        });
+      }
+
+      if (checked == "korea") {
+        window.scrollTo({
+          top: 4900
+        });
+      }
+      }
+    }
+  </script>
+</body>
+
+<!-- 
+  > favicon 404 problem
+  https://stackoverflow.com/questions/31075893/im-getting-favicon-ico-error -->
