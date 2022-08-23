@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- add Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+  <title>Rock Paper Scissors</title>
+
+  <!-- import css -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/color-schema.css" />
+  <link rel="stylesheet" href="css/media-queries.css" />
+
+  <!--to deal with favicon 404 problem-->
+  <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+  <!-- *** navigation start here *** -->
+  <header role="banner" class="banner fixed">
+    <div id="banner-container" class="flexbox">
+      <!-- logo -->
+
+      <a href="#" id="icon-link" class="flexbox fb-row fb-center"><img
+          src="https://build1snowman.neocities.org/images/ico_logo.svg" id="icon" alt="PRS icon" class="pointer" />
+        <h4 id="logo-text"><b>Rock Paper Scissors</b></h4>
+      </a>
+
+      <!-- top navigation tab -->
+      <nav role="navigation" id="nav-top" class="flexbox">
+        <a href="html/international.html" class="tab-item">International</a>
+        <div class="subnav"><a href="html/trivia.html" class="tab-item">Trivia</a>
+          <div class="flexbox fb-column subnav-tab">
+            <a href="html/trivia-experiment.html">Experiment</a>
+            <a href="html/trivia-robot.html">Robot</a>
+            <a href="html/trivia-strategies.html">Strategies</a>
+          </div>
+        </div>
+        <a href="html/tournament.html" class="tab-item">Tournament</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- * menu for mobile device *-->
+  <!-- fixed button -->
+  <button id="f-btn" class="fixed nav-position flexbox fb-center f-btn-inactive" onclick="showNav();">
+    <img src="https://build1snowman.neocities.org/images/ico_menu.svg" id="menu" alt="menu icon" />
+  </button>
+  <!-- bottom navigation tab -->
+  <nav role="navigation" id="nav-bottom" class="flexbox inactive">
+    <a href="index.html" class="tab-item">Home</a>
+    <a href="html/international.html" class="tab-item">International</a>
+
+
+    <div class="flexbox fb-column">
+      <div id="trivia-tab" class="flexbox fb-row tab-item">
+        <button id="more-btn" class="more-btn-inactive" onclick="showSubtab();">
+          <img id="arrow-img" src="https://build1snowman.neocities.org/images/ico_arrow-right.svg"
+            style="width:15px;"></button>
+        <a href="html/trivia.html" class="">Trivia</a>
+      </div>
+      <div id="trivia-subtab" class="flexbox fb-column subtab-inactive">
+        <a href="html/trivia-experiment.html">Experiment</a>
+        <a href="html/trivia-robot.html">Robot</a>
+        <a href="html/trivia-strategies.html">Strategies</a>
+      </div>
+    </div>
+
+    <a href="html/tournament.html" class="tab-item">Tournament</a>
+
+  </nav>
+
+  <!-- space for fixed navigation -->
+  <div class="space"></div>
+
+  <article class="margin-border">
+    <!-- *** section 1: slogan and game , start here *** -->
+    <section id="section1" class="flexbox fb-center fb-row margin-bottom">
+      <div id="sloganSection" class="flexbox fb-center fb-column">
+        <h4 class="slogan">
+          You'd better know all of these </br>before saying you well know about</br>
+          <span class="highlight">Rock Paper Scissors</span> !
+        </h4>
+      </div>
+
+      <game id="game" class="flexbox fb-center fb-row">
+        <div id="showSection" class="flexbox fb-center">
+          <div id="ready" class="forReady">Let's play!</div>
+          <div id="hands" class="flexbox fb-center two-sides">
+            <div id="computer">
+              <img id="com-img" class="leftHandRotate" src="https://build1snowman.neocities.org/images/img_rock.svg"
+                alt="computer's hand" />
+            </div>
+            <div id="player">
+              <img id="player-img" class="rightHandRotate"
+                src="https://build1snowman.neocities.org/images/img_player-rock.svg" alt="player's hand" />
+            </div>
+          </div>
+        </div>
+        <div class="flexbox fb-column">
+          <div id="reminderSec" class="reminder flexbox fb-center">choose your gesture
+            <img id="reminderIco" src="https://build1snowman.neocities.org/images/ico_arrow-down-solid.svg"></div>
+          <div id="choiceSection" class="flexbox fb-center two-sides">
+            <button class="choiceBtn flexbox fb-center pointer" onclick="chooseRock()">
+              <img src="https://build1snowman.neocities.org/images/ico_rock_line.svg" />
+            </button>
+            <button class="choiceBtn flexbox fb-center pointer" onclick="choosePaper()">
+              <img src="https://build1snowman.neocities.org/images/ico_paper_line.svg" />
+            </button>
+            <button class="choiceBtn flexbox fb-center pointer" onclick="chooseScissors()">
+              <img src="https://build1snowman.neocities.org/images/ico_scissors_line.svg" />
+            </button>
+      </game>
+
+    </section>
+
+
+    <div id="ruleSec">
+      <div class="flexbox fb-center margin-bottom">
+        <!-- circle animation from week 7 class material -->
+        <img id="rule" src="https://build1snowman.neocities.org/images/img_rule.svg" class="rule-img" />
+        <div class="circle "></div>
+      </div>
+    </div>
+
+    <!-- *** section 2: international , start here *** -->
+    <a id="section2" href="international.html" class="flexbox fb-center fb-row two-sides pointer margin-bottom">
+      <div class="intro-img-l international-img flexbox fb-center" alt="international section">
+        <div class="flexbox intro-text-r mobile-text-l">
+          <h1>International</h1>
+        </div>
+      </div>
+      <div class="flexbox intro-text-r PC-text">
+        <h1>International</h1>
+      </div>
+    </a>
+
+    <!-- *** section 3: trivia , start here *** -->
+    <a id="section3" href="trivia.html" class="flexbox fb-row two-sides pointer margin-bottom">
+      <div class="intro-img-r trivia-img flexbox fb-center" alt="trivia section">
+        <div class="flexbox intro-text-l mobile-text-r">
+          <h1>Trivia</h1>
+        </div>
+      </div>
+      <div class="flexbox intro-text-l PC-text">
+        <h1>Trivia</h1>
+      </div>
+    </a>
+
+
+    <!-- *** section 4: tournament , start here *** -->
+    <a id="section4" href="tournament.html" class="flexbox fb-center fb-row two-sides pointer margin-bottom">
+
+      <div class="intro-img-l tournament-img flexbox fb-center" alt="tournament section">
+        <div class="flexbox fb- center intro-text-r mobile-text-l">
+          <h1>Tournament</h1>
+        </div>
+      </div>
+      <div class="flexbox intro-text-r PC-text">
+        <h1>Tournament</h1>
+      </div>
+    </a>
+  </article>
+
+   <!-- *** footer , start here *** -->
+   <footer id="footer" class="flexbox fb-row">
+    <div id="logoSec" class="flexbox"><img id="footer-logo" src="https://build1snowman.neocities.org/images/ico_logo.svg"
+        alt="PRS icon" />
+    </div>
+    <div id="contactSec" class="flexbox fb-column">
+      <h4>Web Developer - Anna Pan</h4>
+      <div id="contact" class="flexbox fb-row">
+        <div class="contact-item">
+          <h4>pan.chi@northeastern.edu</h4>
+        </div>
+        <div class="contact-slash">
+          <h4>/</h4>
+        </div>
+        <div id="ig" class="flexbox fb-row contact-item">
+          <img id="ico_ig" src="https://build1snowman.neocities.org/images/ico_ig.svg" />
+          <a href="https://www.instagram.com/anna_chinhuapan/">anna_chinhuapan</a></div>
+      </div>
+    </div>
+  </footer>
+  <!-- *** -end- footer , start here *** -->
+
+  <script>
+    /*** game ***/
+
+    let ready = document.getElementById("ready");
+    let computer = document.getElementById("computer");
+    let rockBtn = document.getElementById("rock");
+    let comImg = document.getElementById("com-img");
+    let playerImg = document.getElementById("player-img");
+    let paperBtn = document.getElementById("paper");
+    let scissorsBtn = document.getElementById("scissors");
+    let choiceSection = document.getElementById("choiceSection");
+    let reminderSec = document.getElementById("reminderSec");
+
+    function chooseRock() {
+      reset();
+
+      let com = randomCom();
+      console.log("you rock, com " + com);
+
+      ready.classList.add("forReady-active");
+      choiceSection.style.visibility = "hidden";
+      reminderSec.style.visibility = "hidden";
+      comImg.classList.remove("leftHandRotate");
+      playerImg.classList.remove("rightHandRotate");
+      comImg.classList.add("leftHandRotate-active");
+      playerImg.classList.add("rightHandRotate-active");
+
+      setTimeout(function () {
+        choiceSection.style.visibility = "visible";
+        reminderSec.style.visibility = "visible";
+        showResult(shoot("rock", com));
+        ready.classList.remove("forReady-active");
+      }, 3000);
+      setTimeout(function () {
+        comImg.src = `https://build1snowman.neocities.org/images/img_${com}.svg`;
+        playerImg.src =
+          "https://build1snowman.neocities.org/images/img_player-rock.svg";
+        comImg.classList.remove("leftHandRotate-active");
+        playerImg.classList.remove("rightHandRotate-active");
+      }, 2000);
+    }
+
+    function choosePaper() {
+      reset();
+
+      let com = randomCom();
+      console.log("you paper, com " + com);
+
+      ready.classList.add("forReady-active");
+      choiceSection.style.visibility = "hidden";
+      reminderSec.style.visibility = "hidden";
+      comImg.classList.remove("leftHandRotate");
+      playerImg.classList.remove("rightHandRotate");
+      comImg.classList.add("leftHandRotate-active");
+      playerImg.classList.add("rightHandRotate-active");
+
+      setTimeout(function () {
+        choiceSection.style.visibility = "visible";
+        reminderSec.style.visibility = "visible";
+        showResult(shoot("paper", com));
+        ready.classList.remove("forReady-active");
+      }, 3000);
+      setTimeout(function () {
+        comImg.src = `https://build1snowman.neocities.org/images/img_${com}.svg`;
+        playerImg.src =
+          "https://build1snowman.neocities.org/images/img_player-paper.svg";
+        comImg.classList.remove("leftHandRotate-active");
+        playerImg.classList.remove("rightHandRotate-active");
+      }, 2000);
+    }
+
+    function chooseScissors() {
+      reset();
+
+      let com = randomCom();
+      console.log("you scissors, com " + com);
+
+      ready.classList.add("forReady-active");
+      choiceSection.style.visibility = "hidden";
+      reminderSec.style.visibility = "hidden";
+      comImg.classList.remove("leftHandRotate");
+      playerImg.classList.remove("rightHandRotate");
+      comImg.classList.add("leftHandRotate-active");
+      playerImg.classList.add("rightHandRotate-active");
+
+      setTimeout(function () {
+        choiceSection.style.visibility = "visible";
+        reminderSec.style.visibility = "visible";
+        showResult(shoot("scissors", com));
+        ready.classList.remove("forReady-active");
+      }, 3000);
+      setTimeout(function () {
+        comImg.src = `https://build1snowman.neocities.org/images/img_${com}.svg`;
+        playerImg.src =
+          "https://build1snowman.neocities.org/images/img_player-scissors.svg";
+        comImg.classList.remove("leftHandRotate-active");
+        playerImg.classList.remove("rightHandRotate-active");
+      }, 2000);
+    }
+
+    function randomCom() {
+      let options = ["rock", "paper", "scissors"];
+      return (comChoice = options[Math.floor(Math.random() * 3)]);
+    }
+
+    function shoot(playerChoice, comChoice) {
+      if (playerChoice === comChoice) {
+        return "draw";
+      } else if (playerChoice === "rock") {
+        if (comChoice === "paper") {
+          return "lose";
+        } else if (comChoice === "scissors") {
+          return "win";
+        }
+      } else if (playerChoice === "paper") {
+        if (comChoice === "rock") {
+          return "win";
+        } else if (comChoice === "scissors") {
+          return "lose";
+        }
+      } else if (playerChoice === "scissors") {
+        if (comChoice === "rock") {
+          return "lose";
+        } else if (comChoice === "paper") {
+          return "win";
+        }
+      }
+    }
+
+    function showResult(result) {
+      let ready = document.getElementById("ready");
+
+      if (result === "win") {
+        ready.textContent = "You WIN 🥳";
+        ready.classList.add("win");
+      } else if (result === "lose") {
+        ready.textContent = "You LOSE 🥲";
+        ready.classList.add("lose");
+      } else {
+        ready.textContent = "DRAW";
+        ready.classList.add("draw");
+      }
+    }
+
+    function reset() {
+      let ready = document.getElementById("ready");
+      let comImg = document.getElementById("com-img");
+      let playerImg = document.getElementById("player-img");
+
+      comImg.src = `https://build1snowman.neocities.org/images/img_rock.svg`;
+      playerImg.src = "https://build1snowman.neocities.org/images/img_player-rock.svg";
+      ready.textContent = "";
+      ready.classList.remove("win");
+      ready.classList.remove("lose");
+      ready.classList.remove("draw");
+    }
+
+    /*** -end- game ***/
+
+    /*** show menu for mobile ***/
+    let navHeight = 300; //the same with height of nav-bottom
+    function showNav() {
+      let bottomNav = document.getElementById("nav-bottom");
+      let footer = document.getElementById("footer");
+      let menu = document.getElementById("menu");
+      let btn = document.getElementById("f-btn");
+
+      /* classList.contains
+      > reference: https://stackoverflow.com/questions/5898656/check-if-an-element-contains-a-class-in-javascript
+      */
+      if (bottomNav.classList.contains("inactive")) {
+        /* className
+        reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/className
+        */
+        bottomNav.className = "nactive";
+
+        /* style.attribute
+        reference: https://www.w3schools.com/js/js_htmldom_css.asp
+        */
+        footer.style.height = `${navHeight + 100}px`; //let footer grow up with menu
+
+        menu.style.transform = "rotate(90deg)"; //rotate menu icon when it change to close icon
+        menu.style.transition = "transform 0.3s"; //rotate menu icon when it change to close icon
+
+        menu.src = "https://build1snowman.neocities.org/images/ico_close.svg"; //change icon to close icon
+
+        btn.classList.add("f-btn-active");
+        btn.classList.remove("f-btn-inactive");
+
+
+      } else {
+        bottomNav.className = "inactive";
+        footer.style.height = "100px";
+        menu.src = "https://build1snowman.neocities.org/images/ico_menu.svg"; // change back to menu icon
+        menu.style.transform = "rotate(0deg)"; //rotate back
+        menu.style.transition = "transform 0.3s"; //rotate back
+        bottomNav.style.transition = "bottom 0.3s"; //rotate back
+
+        btn.classList.add("f-btn-inactive");
+        btn.classList.remove("f-btn-active");
+
+      }
+    }
+    /*** -end- show menu for mobile ***/
+
+    /*** show subtab  ***/
+    function showSubtab() {
+      let subtab = document.getElementById("trivia-subtab");
+      let footer = document.getElementById("footer");
+      let bottomNav = document.getElementById("nav-bottom");
+      let triviaTab = document.getElementById("trivia-tab");
+      let arrowImg = document.getElementById("arrow-img");
+      let moreBtn = document.getElementById("more-btn");
+
+      if (subtab.classList.contains("subtab-inactive")) {
+        arrowImg.src = "https://build1snowman.neocities.org/images/ico_arrow-down.svg"
+        moreBtn.classList.add("more-btn-active");
+        moreBtn.classList.remove("more-btn-inactive");
+
+        subtab.className = "subtab-active";
+        subtab.style.transition = "display 0.3s";
+
+        navHeight = navHeight + 50;
+        footer.style.height = `${navHeight + 100}px`;
+        bottomNav.style.transition = "height 0.3s";
+
+        bottomNav.style.height = `${navHeight}px`;
+        // menu.style.transform = "rotate(0deg)"; //rotate back
+        bottomNav.style.transition = "height 0.3s";
+
+        triviaTab.classList.add("tab-active");
+      } else {
+        arrowImg.src = "https://build1snowman.neocities.org/images/ico_arrow-right.svg"
+        moreBtn.classList.add("more-btn-inactive");
+        moreBtn.classList.remove("more-btn-active");
+
+        subtab.className = "subtab-inactive";
+        navHeight = navHeight - 50;
+        footer.style.height = `${navHeight + 100}px`;
+        bottomNav.style.height = `${navHeight}px`;
+        triviaTab.classList.remove("tab-active");
+
+        //   subtab.classList.remove("subtab-active");
+        // subtab.classList.add("subtab-inactive");
+      }
+
+    }
+    /*** -end- show subtab  ***/
+  </script>
+</body>
+
+<!-- 
+  > favicon 404 problem
+  https://stackoverflow.com/questions/31075893/im-getting-favicon-ico-error -->
+
+<!-- instagram icon 
+  > <a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Freepik - Flaticon</a>-->

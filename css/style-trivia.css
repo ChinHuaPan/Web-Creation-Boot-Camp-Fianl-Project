@@ -1,0 +1,128 @@
+/* initial some arameters */
+article {
+  margin: 0 auto;
+  width: 100%;
+}
+
+p {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 14pt;
+  /* set line-height and letter-spacing for being comfortable to read
+  > https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+  > https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing
+  */
+  letter-spacing: 1px;
+  line-height: 28pt;
+}
+
+/* set parameters I need */
+
+#banner-trivia {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+    url(https://build1snowman.neocities.org/images/trivia.jpg);
+}
+
+.banner-page {
+  background-size: cover;
+  background-position: 50% 40%;
+  height: 300px;
+}
+
+.banner-title {
+  font-size: 60pt;
+  color: white;
+  margin: 50px;
+}
+
+.block {
+  border: var(--line-gray) dotted 3px;
+  border-radius: 20px;
+  /* padding: 0 30px; */
+  margin: 20px;
+}
+
+.block-title {
+  color: var(--primary-variant);
+  font-size: 24pt;
+  padding: 20px;
+  margin: 0;
+  background-color: var(--secondary);
+  border-radius: 15px 15px 0 0;
+}
+
+.block-content {
+  padding: 30px;
+}
+
+.block div {
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+.block p {
+  margin: 0;
+}
+
+.btn-read-more,
+.btn-go-back {
+  height: 35px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 14pt;
+  transition: background-color 0.3s;
+}
+.ico-go-back {
+  background-image: url("https://build1snowman.neocities.org/images/ico_arrow-right.svg");
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.btn-read-more:hover,
+.btn-go-back:hover {
+  background-color: var(--secondary-variant);
+}
+
+.btn-read-more {
+  width: 100px;
+}
+
+.btn-go-back {
+  padding: 0 20px 0 10px;
+}
+
+.btn-margin {
+  margin-right: 30px;
+}
+
+/*** single page ***/
+.topic-title {
+  color: var(--primary-variant);
+  font-size: 30pt;
+  margin: 30px 0 20px 0;
+}
+
+.article-img {
+  width: 100%;
+  max-width: 800px;
+}
+
+.annotation {
+  font-size: 8pt;
+  color: var(--text-gray);
+  text-align: start;
+  line-height: 12pt;
+}
+
+#slideSec {
+  height: 400px;
+  width: 700px;
+  overflow: hidden;
+}
+
+.slide-img {
+  width: 100%;
+}

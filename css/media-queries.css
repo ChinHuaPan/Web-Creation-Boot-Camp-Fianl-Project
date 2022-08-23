@@ -1,0 +1,549 @@
+/******* for mobile device ******/
+@media screen and (max-width: 767px) {
+  /*** navigation ***/
+
+  /*don't fix the banner*/
+  .banner {
+    position: unset;
+  }
+
+  #logo-text {
+    font-size: 18pt;
+  }
+
+  .margin-border {
+    margin: 30px 0;
+  }
+
+  /*don't show tab on the banner*/
+  #menu {
+    width: 20px;
+  }
+
+  #nav-top {
+    display: none;
+  }
+  #nav-bottom {
+    width: 100%;
+    height: 300px; /*the same with navHeight*/
+    flex-direction: column;
+    position: fixed;
+    z-index: 998;
+    background-color: var(--primary);
+    justify-content: start;
+    align-items: start; /*center*/
+    transition: bottom 0.5s ease;
+  }
+
+  .tab-item {
+    height: 30px;
+    width: auto;
+    align-items: center; /*center*/
+    justify-content: end; /*center*/
+    padding: 10px 40px;
+    border-bottom: 3px dotted var(--line-gray);
+    color: white;
+  }
+  .tab-item:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+  }
+
+  .tab-active {
+    background-color: white;
+    color: var(--primary);
+  }
+
+  /*show menu button*/
+  #f-btn {
+    visibility: visible;
+  }
+
+  .more-btn-inactive {
+    background-color: var(--primary);
+  }
+
+  .more-btn-active {
+    background-color: white;
+  }
+
+  #more-btn:hover {
+    background-color: var(--secondary);
+  }
+  /*** -end- navigation ***/
+
+  /*** section 1 ***/
+  .slogan {
+    font-size: 14pt;
+    margin: 15px 5px;
+  }
+  .hightlight {
+    font-size: 20pt;
+  }
+
+  .rule-img {
+    width: 400px;
+  }
+
+  .circle {
+    width: 260px;
+    height: 260px;
+  }
+  /*** end - section 1 ***/
+
+  /*** game ***/
+  #game {
+    width: 100%;
+    height: 90%;
+    flex-direction: column;
+  }
+
+  #showSection {
+    width: 90%;
+    flex-direction: row;
+  }
+  #choiceSection {
+    flex-direction: row;
+    width: 90%;
+  }
+  .choiceBtn {
+    margin: 10px;
+    transform: rotate(0);
+  }
+  #hands {
+    width: 60%;
+    height: auto;
+    flex-direction: column;
+  }
+  #computer {
+    transform: translateY(-130px);
+  }
+  #com-img {
+    transform: rotate(180deg);
+  }
+  #player-img {
+    transform: rotate(0);
+  }
+  @keyframes rightHandRotate {
+    from {
+      transform: rotate(20deg);
+    }
+    to {
+      transform: rotate(-20deg);
+    }
+  }
+  @keyframes rightHandShoot {
+    0% {
+      transform: rotate(20deg);
+    }
+    50% {
+      transform: rotate(-20deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes leftHandRotate {
+    from {
+      transform: rotate(160deg);
+    }
+    to {
+      transform: rotate(200deg);
+    }
+  }
+  @keyframes leftHandShoot {
+    0% {
+      transform: rotate(160deg);
+    }
+    50% {
+      transform: rotate(200deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  /*** -end- game ***/
+
+  /*** home page introduce section ***/
+  .PC-text {
+    display: none;
+  }
+  .intro-text-r h1,
+  .intro-text-l h1 {
+    font-size: 35pt;
+  }
+
+  .mobile-text-l,
+  .mobile-text-r {
+    display: flex;
+    height: inherit;
+    color: white;
+    height: 300px;
+    width: 85%;
+    align-items: center;
+  }
+  .mobile-text-r {
+    justify-content: end;
+  }
+
+  .mobile-text-l {
+    justify-content: start;
+  }
+
+  .intro-img-l,
+  .intro-img-r {
+    width: 100%;
+    height: 200px;
+  }
+
+  .international-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+      url(https://build1snowman.neocities.org/images/international.jpg);
+  }
+  .trivia-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+      url(https://build1snowman.neocities.org/images/trivia.jpg);
+  }
+  .tournament-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+      url(https://build1snowman.neocities.org/images/tournament.jpg);
+  }
+
+  @keyframes changeWidth {
+    from {
+      width: 90%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /*** -end- home page introduce section ***/
+
+  /*** page: international ***/
+  .banner-page {
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner-title {
+    font-size: 40pt;
+    margin: 20px;
+  }
+  /*** -end- page: international ***/
+
+  /*** page:trivia ***/
+  .mobile-text {
+    display: flex;
+  }
+
+  .block .mobile-text {
+    line-height: 22pt;
+  }
+
+  .block-title {
+    padding: 15px;
+  }
+
+  .block-content {
+    padding: 15px;
+  }
+
+  .topic-title {
+    font-size: 24pt;
+    margin: 40px 30px 20px 30px;
+  }
+
+  #robot-video,
+  #tournament-video {
+    width: 100%;
+    height: 250px;
+  }
+
+  .article-type p {
+    margin: 0 30px;
+  }
+  .article-type .video-title {
+    text-align: center;
+  }
+
+  #slideSec {
+    height: 300px;
+  }
+
+  /*** -end- page:trivia ***/
+
+  /*** page : international ***/
+
+  #country-selector {
+    height: 80px;
+    top: 0px;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .country-btn {
+    height: 35px;
+    font-size: 10pt;
+    padding: 0 10px;
+    width: fit-content;
+    text-align: center;
+  }
+
+  .line {
+    margin: 5px;
+    width: 100%;
+  }
+
+  .sentence {
+    padding: 0 5px;
+  }
+
+  .mobile-change {
+    flex-direction: column;
+  }
+
+  .gesture-and-result {
+    width: 100%;
+  }
+
+  .how-to-play {
+    width: 100%;
+    border: none;
+  }
+
+  .gesture-img {
+    width: 100px;
+  }
+
+  .result-text {
+    margin: 5px;
+    font-size: 14pt;
+  }
+
+  .hint-text {
+    font-size: 14pt;
+  }
+  /*** -end- page : international ***/
+
+  /*** footer ***/
+  #contact {
+    flex-direction: column;
+  }
+
+  .contact-slash {
+    display: none;
+  }
+  /*** -end-  footer ***/
+}
+
+/******* for tablet device ******/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /*** navigation ***/
+  .space {
+    height: 90px;
+  }
+
+  #banner-container {
+    justify-content: space-between; /*two-sides*/
+    align-items: center; /*two-sides*/
+    flex-direction: row; /*fb-row*/
+  }
+
+  #nav-bottom {
+    display: none;
+  }
+  /*** end-navigation ***/
+
+  /*** game ***/
+  #game {
+    width: 90%;
+  }
+  #showSection {
+    flex-direction: column;
+  }
+  #choiceSection {
+    flex-direction: column;
+  }
+
+  /*** -end- game ***/
+
+  /*** home page introduce section ***/
+  .PC-text {
+    display: none;
+  }
+  .intro-img-l.banner {
+    width: 50%;
+  }
+
+  .intro-text-r h1,
+  .intro-text-l h1 {
+    font-size: 60pt;
+  }
+  .mobile-text-l,
+  .mobile-text-r {
+    display: flex;
+    height: inherit;
+    color: white;
+    width: 70%;
+    align-items: center;
+  }
+  .mobile-text-r {
+    justify-content: end;
+  }
+
+  .intro-img-l,
+  .intro-img-r {
+    width: 100%;
+  }
+
+  .international-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+      url(https://build1snowman.neocities.org/images/international.jpg);
+  }
+  .trivia-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+      url(https://build1snowman.neocities.org/images/trivia.jpg);
+  }
+  .tournament-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+      url(https://build1snowman.neocities.org/images/tournament.jpg);
+  }
+
+  @keyframes changeWidth {
+    from {
+      width: 90%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  /*** -end- home page introduce section ***/
+
+  /*** page: tournament ***/
+  .mobile-text {
+    display: none;
+  }
+
+  .tablet-text {
+    display: flex;
+  }
+  /*** -end- page: tournament ***/
+
+  /*** page: trivia ***/
+  #robot-video,
+  #tournament-video {
+    width: 100%;
+    height: 350px;
+  }
+  /*** -end- page: trivia ***/
+
+  /*** page: intenational ***/
+  .country-btn {
+    font-size: 12pt;
+  }
+
+  .gesture-img {
+    width: 90px;
+  }
+
+  .sentence {
+    padding: 5px;
+  }
+
+  .result-text {
+    margin: 0 5px;
+  }
+
+  .gesture-text {
+    font-size: 18pt;
+  }
+
+  .result-text {
+    font-size: 14pt;
+  }
+  /*** -end- page: intenational ***/
+
+  #footer {
+    height: 100px;
+  }
+}
+/******* for PC device ******/
+@media screen and (min-width: 1024px) {
+  /*** navigation ***/
+  .space {
+    height: 75px;
+  }
+  .margin-border {
+    margin: 50px 0;
+  }
+
+  #banner-container {
+    justify-content: space-between; /*two-sides*/
+    align-items: center; /*two-sides*/
+    flex-direction: row; /*fb-row*/
+  }
+
+  #nav-bottom {
+    display: none;
+  }
+  /*** -end-navigation ***/
+  /*** slogan ***/
+  .slogan {
+    font-size: 20pt;
+    margin: 15px 0;
+    line-height: 44pt;
+  }
+  .highlight {
+    font-size: 28pt;
+  }
+  /*** -end- slogan ***/
+
+  /*** game ***/
+  #showSection {
+    flex-direction: column;
+  }
+  #choiceSection {
+    flex-direction: column;
+  }
+  /*** -end- game ***/
+
+  /*** home page introduce section ***/
+
+  .intro-text-r h1,
+  .intro-text-l h1 {
+    font-size: 40pt;
+  }
+  /*** -end- home page introduce section ***/
+
+  /*** page: trivia ***/
+  #robot-video,
+  #tournament-video {
+    width: 100%;
+    height: 400px;
+  }
+  .mobile-text {
+    display: none;
+  }
+  /*** -end- page: trivia ***/
+
+  footer {
+    height: 100px;
+  }
+}
+
+/******* for less than 1280 ******/
+@media screen and (max-width: 1280px) {
+  #slogan {
+    width: 100%;
+  }
+  #section1 {
+    flex-direction: column;
+  }
+
+  #showSection {
+    border-top: 3px dotted var(--line-gray);
+  }
+}

@@ -1,0 +1,679 @@
+/* initial some arameters */
+* {
+  font-family: "Acme", cursive, Candara, system-ui, Calibri, Segoe, Segoe UI,
+    Optima, Arial, sans-serif;
+}
+
+* html,
+body,
+div,
+span,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* html,
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+* p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-bottom: 20px;
+}
+
+* ul,
+h1.greeting {
+  width: 100%;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  list-style: none;
+  /*I would like to change the style of bullet*/
+}
+
+* ul li {
+  margin-bottom: 5px;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+* ul li::before {
+  /*I would like to change the style of bullet*/
+  content: "・";
+  color: var(--line-gray);
+  content: "\2022";
+  /* I'm not very sure what is this */
+  margin-right: 10px;
+}
+
+* h2 {
+  margin: 10px 0;
+}
+
+* h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+* button {
+  border: 0;
+  background-color: none;
+}
+
+* a {
+  text-decoration: none;
+  color: unset;
+}
+
+/* set parameters I need */
+
+.margin-border {
+  margin: 20px 0;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.fb-row {
+  flex-direction: row;
+}
+
+.fb-column {
+  flex-direction: column;
+}
+
+.fb-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.two-sides {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
+}
+
+.item-margin {
+  margin-bottom: 15px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inactive {
+  bottom: -400px; /*more than navHeight*/
+}
+
+.nactive {
+  bottom: 0;
+}
+
+/* set parameters by items */
+
+/*** navigation ***/
+
+.banner {
+  background-color: white;
+  padding: 0;
+  width: 100%;
+  top: 0;
+  border-bottom: 3px dotted var(--line-gray);
+  z-index: 999;
+}
+.banner > div {
+  padding: 0 40px;
+}
+
+.nav-position {
+  bottom: 30px;
+  right: 30px;
+}
+
+#f-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 60px;
+  z-index: 999;
+  visibility: hidden; /*initial state is hidden*/
+}
+
+/* @keyframes change-color {
+  from {
+    background-color: var(--primary);
+  }
+  to {
+    background-color: white;
+  }
+} */
+
+.f-btn-active {
+  background-color: white;
+  border: none;
+}
+
+.f-btn-inactive {
+  background-color: var(--primary);
+  border: white solid 3px;
+}
+
+#icon-link {
+  width: auto;
+}
+
+#icon {
+  width: 70px;
+  color: white;
+}
+
+#logo-text {
+  color: var(--primary);
+  font-size: 22pt;
+  margin: 0px 10px;
+}
+
+.tab-item {
+  display: flex;
+  padding: 10px;
+  color: var(--primary);
+  font-size: 16pt;
+}
+
+.tab-item:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+
+.tab-active {
+  color: white;
+  background-color: var(--primary);
+}
+
+.subnav {
+  width: auto;
+  height: auto;
+}
+
+.subnav-tab {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-gray);
+  z-index: 1;
+}
+
+.subnav-tab a {
+  /* float: left; */
+  color: var(--primary);
+  text-decoration: none;
+  padding: 10px;
+  font-size: 14pt;
+  transition: color 0.3s;
+}
+.subnav:hover .tab-item {
+  background-color: var(--secondary);
+  color: var(--primary);
+  transition: color 0.3s;
+  transition: background-color 0.3s;
+}
+.subnav-tab a:hover {
+  background-color: var(--secondary-variant);
+  color: white;
+}
+
+.subnav:hover .subnav-tab {
+  display: flex;
+}
+
+.subtab-active {
+  display: flex;
+  /* transition: visible 1s ease-out; */
+}
+
+/* @keyframes visible {
+  from {
+    opacity: 0;
+    display: none;
+    transform: translate(0, -30px);
+  }
+  to {
+    opacity: 1;
+    display: flex;
+    transform: translate(0, 0);
+  }
+} */
+
+.subtab-inactive {
+  transition: visible 1s ease-out;
+  display: none;
+}
+
+#trivia-subtab {
+  background-color: white;
+  justify-content: end;
+  padding: 0 25px;
+}
+
+#trivia-subtab a {
+  color: var(--primary);
+  padding: 10px 15px;
+  font-size: 14pt;
+}
+
+#trivia-subtab a:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+/*** section 1 ***/
+
+#sloganSction {
+  width: 35%;
+  margin: 30px;
+}
+
+.slogan {
+  color: var(--primary);
+  font-style: italic;
+  font-size: 18pt;
+  margin: 15px 0;
+  text-align: center;
+  line-height: 30pt;
+  letter-spacing: 1pt;
+}
+
+.rule-img {
+  max-width: 500px;
+}
+.reminder {
+  font-size: 12pt;
+  color: var(--primary);
+  margin: 10px 0;
+}
+
+#reminderIco {
+  width: 15px;
+  margin-left: 10px;
+}
+
+.highlight {
+  color: var(--primary-variant);
+  font-size: 24pt;
+}
+
+/*circle animation from week 7 class material*/
+
+.circle {
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  padding: 3px;
+  position: absolute;
+  border: 8px dotted var(--secondary);
+  animation: configure-clockwise 15s ease-in-out 0s infinite;
+  z-index: -1;
+}
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*** game ***/
+#game {
+  width: auto;
+  height: 360px;
+  text-align: center;
+  font-size: 30pt;
+  color: var(--primary-variant);
+  margin: 30px 0;
+}
+#showSection {
+  height: 100%;
+}
+
+#play-show {
+  width: 90%;
+  height: 70%;
+}
+
+#hands {
+  width: 500px;
+  height: 200px;
+}
+
+#com-img,
+#player-img {
+  width: 150px;
+}
+
+#com-img {
+  transform: rotate(90deg);
+  transform-origin: 50% 100%;
+}
+
+.leftHandRotate {
+  animation: leftHandRotate 0.5s infinite alternate;
+}
+
+.leftHandRotate-active {
+  animation: leftHandShoot 0.35s infinite ease-in-out alternate;
+}
+@keyframes leftHandRotate {
+  from {
+    transform: rotate(70deg);
+  }
+  to {
+    transform: rotate(110deg);
+  }
+}
+@keyframes leftHandShoot {
+  0% {
+    transform: rotate(70deg);
+  }
+  50% {
+    transform: rotate(110deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+#player-img {
+  transform: rotate(-90deg);
+  transform-origin: 50% 100%;
+}
+.rightHandRotate {
+  animation: rightHandRotate 0.5s infinite alternate;
+}
+.rightHandRotate-active {
+  animation: rightHandShoot 0.35s infinite ease-in-out alternate;
+}
+
+@keyframes rightHandRotate {
+  from {
+    transform: rotate(-70deg);
+  }
+  to {
+    transform: rotate(-110deg);
+  }
+}
+@keyframes rightHandShoot {
+  0% {
+    transform: rotate(-70deg);
+  }
+  50% {
+    transform: rotate(-110deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+.forReady {
+  width: 200px;
+}
+.forReady::after {
+  color: var(--primary-variant);
+  /* content: "ready"; */
+}
+
+.forReady-active::after {
+  animation-name: changeText;
+  animation-duration: 3s;
+  content: "";
+  color: var(--primary-variant);
+}
+
+@keyframes changeText {
+  20% {
+    content: "Rock";
+  }
+  40% {
+    content: "Paper";
+  }
+  60% {
+    content: "Scissores";
+  }
+  80% {
+    content: "SHOOT!";
+  }
+  100% {
+    content: "SHOOT!";
+  }
+}
+
+/*css change text
+> https://stackoverflow.com/questions/42236440/change-text-with-a-css3-animation
+> https://www.geeksforgeeks.org/how-to-create-text-changing-animation-effect-using-css/
+> https://codepen.io/Rafu/pen/VJYRyY*/
+
+.choiceBtn {
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+  margin: 10px 50px;
+  background-color: var(--highlight);
+  color: white;
+  font-size: 15pt;
+  transform: rotate(-90deg);
+}
+.lose {
+  background-color: var(--primary-variant);
+  color: white;
+}
+.win {
+  background-color: var(--secondary);
+  color: var(--primary-variant);
+}
+.draw {
+  border: var(--primary) dotted 5px;
+  color: var(--primary);
+}
+/*** -end- game ***/
+
+/* introduction sections */
+.international-img {
+  /* background-size
+  https://developer.mozilla.org/en-US/docs/Web/CSS/background-size*/
+  background-size: cover;
+  background-position: 50% 65%;
+  /* linear-gradient
+  https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient*/
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url(https://build1snowman.neocities.org/images/international.jpg);
+}
+
+.trivia-img {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url(https://build1snowman.neocities.org/images/trivia.jpg);
+}
+
+.tournament-img {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url(https://build1snowman.neocities.org/images/tournament.jpg);
+}
+
+#section2,
+#section4 {
+  background: linear-gradient(0deg, var(--secondary), transparent);
+}
+
+#section3 {
+  background: linear-gradient(0deg, var(--secondary-variant), transparent);
+  flex-direction: row-reverse;
+}
+
+@keyframes changeWidth {
+  from {
+    width: 60%;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+.intro-img-l {
+  clip-path: polygon(0% 0%, 0% 100%, 75% 100%, 100% 0%);
+}
+
+.intro-img-r {
+  clip-path: polygon(0% 00%, 25% 100%, 100% 100%, 100% 00%);
+}
+.intro-img-l,
+.intro-img-r {
+  height: 300px;
+  width: 70%;
+  animation: changeWidth 1.5s;
+}
+
+.intro-text-r,
+.intro-text-l {
+  width: 30%;
+  color: var(--primary);
+}
+
+.intro-text-r {
+  justify-content: start;
+}
+
+.intro-text-l {
+  justify-content: center;
+}
+
+.mobile-text-l,
+.mobile-text-r {
+  display: none;
+}
+
+/*international page*/
+.listName {
+  color: var(--primary);
+  margin: 10px 0;
+}
+#international {
+  /* border-top: 2px solid var(--primary); */
+  border-collapse: collapse;
+  width: 90%;
+}
+
+/*footer*/
+#footer {
+  /* position: absolute; */
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg-gray);
+  bottom: 0;
+  left: 0;
+  transition: height 0.5s ease;
+  justify-content: center;
+}
+
+#footer h4,
+#footer a {
+  font-size: 10pt;
+  font-family: "Fira Sans", sans-serif;
+  color: var(--text-gray);
+  margin: 5px 0;
+  font-weight: 400;
+}
+
+#footer-logo {
+  width: 60px;
+  margin-right: 20px;
+}
+
+#logoSec {
+  align-items: flex-start;
+  margin: 10px 0;
+}
+
+#ig {
+  align-items: center;
+}
+
+#ico_ig {
+  margin-right: 3px;
+  width: 20px;
+}
+
+#contactSec {
+  margin: 10px 0;
+}
+
+.contact-item,
+.contact-slash {
+  margin-right: 10px;
+}
+
+.cite {
+  font-size: 10pt;
+  color: var(--text-gray);
+  text-align: end;
+}
+
+.block-type {
+  max-width: 800px;
+}
+
+.article-type {
+  max-width: 800px;
+}
+
+.table-type {
+  max-width: 900px;
+}
+/* reference website
+> W3Schools
+> https://www.itread01.com/p/653335.html
+
+> button: https://www.webdesigns.com.tw/css_button.asp
+
+> color custom properties
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+>background position
+https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
+
+>flex-wrap
+https://ithelp.ithome.com.tw/articles/10239122
+*/

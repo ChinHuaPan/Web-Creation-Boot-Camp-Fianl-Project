@@ -1,0 +1,14 @@
+:root {
+  --primary: #1e96fc;
+  --primary-variant: #072ac8;
+  --secondary: #fcf300; /* rgb(252, 243, 0)*/
+  --secondary-variant: #ffc600; /* rgb(255, 198, 0)*/
+  --highlight: #ff9797;
+  /* --highlight: #f4a4a6; */
+  --bg-gray: #f3f3f3;
+  --line-gray: #dadada;
+  --text-gray: #979797;
+}
+
+/*I pick color in this website
+> https://coolors.co/5e0b15-90323d-d9cab3-bc8034-8c7a6b*/

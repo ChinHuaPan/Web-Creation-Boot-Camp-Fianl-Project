@@ -1,0 +1,226 @@
+* {
+  /*add font for other languages*/
+  font-family: "Acme", "RocknRoll One", "Josefin Sans", cursive, Candara,
+    system-ui, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+}
+
+/* smooth scroll
+> https://css-tricks.com/snippets/jquery/smooth-scrolling/*/
+html {
+  scroll-behavior: smooth;
+}
+
+article {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* set parameters I need */
+
+#banner-international {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+    url(https://build1snowman.neocities.org/images/international.jpg);
+}
+
+.banner-page {
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 300px;
+}
+
+.banner-title {
+  font-size: 60pt;
+  color: white;
+  margin: 50px;
+}
+
+#international tr {
+  /* border-bottom: 2px solid var(--primary); */
+  height: 75px;
+}
+
+/* #international tr td:last-child {
+
+} */
+
+#international tr:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+#international th {
+  color: white;
+  background-color: var(--primary);
+}
+
+#international td:first-child {
+  padding-left: 15px;
+}
+
+#international td:last-child {
+  padding-right: 15px;
+  text-align: left;
+}
+
+#international td {
+  text-align: center;
+  padding: 0 5px;
+}
+
+/********************/
+/*** country selector ***/
+#country-selector {
+  height: 70px;
+  width: 100%;
+  position: sticky;
+  top: 72px;
+  z-index: 997;
+  background-color: white;
+}
+
+.country-btn {
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 14pt;
+  transition: background-color 0.3s;
+  margin: 0 5px;
+  padding: 0 15px;
+}
+
+.country-btn:hover {
+  background-color: var(--secondary-variant);
+}
+
+.country-btn:active {
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+
+#country-selector input[type="radio"] {
+  /* visibility: hidden; */
+  display: none;
+}
+
+/*select label by "element + element"
+> https://www.w3schools.com/cssref/css_selectors.asp*/
+#country-selector input[type="radio"]:checked + label {
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+/*** show block ***/
+
+.block {
+  border: var(--line-gray) dotted 3px;
+  border-radius: 20px;
+  /* padding: 0 30px; */
+  margin: 50px 20px;
+}
+
+.block-title {
+  /* color: var(--primary-variant); */
+  color: white;
+  font-size: 24pt;
+  padding: 20px;
+  margin: 0;
+  /* background-color: var(--secondary-variant); */
+  background-color: var(--highlight);
+  /* background-color: var(--secondary); */
+  border-radius: 15px 15px 0 0;
+}
+
+/* draw a line with word in the middle
+> https://stackoverflow.com/questions/5214127/css-technique-for-a-horizontal-line-with-words-in-the-middle*/
+.sub-title {
+  color: var(--line-gray);
+  width: 90%;
+  text-align: center;
+  border-bottom: 3px dotted var(--line-gray);
+  line-height: 0.05em;
+  margin: 10px 0;
+  /* display: none; */
+}
+
+.sub-title span {
+  background: white;
+  padding: 0 10px;
+}
+
+.sub-block {
+  margin: 10px 0 20px 0;
+  padding: 0 10px;
+  height: 100%;
+}
+
+.gesture-and-result {
+  width: 40%;
+}
+
+.how-to-play {
+  border-left: 3px dotted var(--line-gray);
+  width: 60%;
+}
+
+.gesture-img {
+  width: 110px;
+}
+
+.gesture-text {
+  color: var(--primary);
+  font-size: 20pt;
+  margin: 10px;
+  text-align: center;
+}
+
+.left-hand {
+  width: 100px;
+  transform: rotate(90deg);
+}
+
+.right-hand {
+  width: 100px;
+  transform: rotate(-90deg);
+}
+
+.sentence {
+  color: var(--primary);
+  font-size: 24pt;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hint-text {
+  font-size: 14pt;
+  color: var(--primary);
+}
+
+.more-hint {
+  width: 90%;
+  letter-spacing: 1px;
+  line-height: 20pt;
+}
+
+.arrow {
+  width: 20px;
+}
+
+.win-text,
+.lose-text {
+  padding: 10px;
+}
+
+.draw-text {
+  padding: 5px;
+}
+
+.result-text {
+  text-align: center;
+  margin: 5px;
+  font-size: 16pt;
+  max-width: 90px;
+}
+
+.language-text {
+  font-size: 20pt;
+  color: var(--primary);
+}

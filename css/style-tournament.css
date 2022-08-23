@@ -1,0 +1,75 @@
+/* initial some arameters */
+article {
+  margin: 0 auto;
+  width: 100%;
+}
+
+p {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 14pt;
+  /* set line-height and letter-spacing for being comfortable to read
+    > https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+    > https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing
+    */
+  letter-spacing: 1px;
+  line-height: 28pt;
+}
+
+/* set parameters I need */
+
+.video-title {
+  color: var(--primary-variant);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#banner-tournament {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+    url(https://build1snowman.neocities.org/images/tournament.jpg);
+}
+
+.banner-page {
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 300px;
+}
+
+.banner-title {
+  font-size: 60pt;
+  color: white;
+  margin: 50px;
+}
+
+.title {
+  color: var(--primary-variant);
+  font-size: 28pt;
+}
+
+#tournament-table {
+  width: 90%;
+}
+
+#tournament-table tr {
+  height: 50px;
+}
+
+#tournament-table tr:nth-child(even) {
+  background-color: var(--bg-gray);
+}
+
+#tournament-table th {
+  color: white;
+  background-color: var(--primary);
+}
+
+#tournament-table td:first-child {
+  padding-left: 15px;
+}
+#tournament-table td:last-child {
+  padding-right: 15px;
+}
+
+#tournament-table td {
+  text-align: center;
+  padding: 0 5px;
+}
